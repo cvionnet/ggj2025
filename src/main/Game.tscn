@@ -1,17 +1,14 @@
 [gd_scene load_steps=4 format=3 uid="uid://mg47hmbqyedf"]
 
 [ext_resource type="PackedScene" uid="uid://da2ak3xgrto8d" path="res://src/actors/Player.tscn" id="1"]
-[ext_resource type="PackedScene" path="res://src/HUD/HUD.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://bx7pjhectaviu" path="res://src/HUD/Fartbar.tscn" id="1_w1gev"]
 [ext_resource type="Texture2D" uid="uid://cevmyw5pvmccb" path="res://assets/scenes/background-swimming_pool.jpg" id="3_52myt"]
-
 
 [node name="Node" type="Node"]
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
-[node name="Control" parent="HUD" instance=ExtResource("2")]
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Fartbar" parent="HUD" instance=ExtResource("1_w1gev")]
 
 [node name="Player" parent="." instance=ExtResource("1")]
 position = Vector2(172, 148)

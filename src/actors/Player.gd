@@ -3,12 +3,9 @@ extends CharacterBody2D
 
 #*--    HEADER    ----------------------------------------------------------*//
 
-@export var speed: float = 50.0
+@export var speed: float = 100.0
 @export var speedRun: float = 20.0
 @export var inertia: float = 0.15 # proche 0.0 = déplacement "lourd"  /  proche 1.0 = déplacement aérien
-@export var fart: float = 1
-@export var suspection: float = 1
-
 
 
 # Déclaration des signaux
@@ -41,15 +38,20 @@ var hit_animaton := "hit"
 var hurt_animation := "hurt"
 var dying_animation := "dying"
 
+# State #
+var FartManaDisponible := false
+
 #*--------------------------------------------------------------------------*//
 #*--    GODOT METHODS    ---------------------------------------------------*//
 
 
 # Not synced with physics. Execution done after the physics step
 func _process(_delta):
-	ReadInputs()
+	pass
 
-
+func _ready() -> void:
+	var player = get_node('/root').find_child("Fartbar", true, false)
+	player.connect("FartManaDisponible", Callable(self, "_on_FartManaDisponible"))
 
 
 # For processes that must happen before each physics step, such as controlling a character
@@ -62,15 +64,15 @@ func _physics_process(_delta):
 
 	# Si le joueur lache un pet
 	if Input.is_action_just_pressed(move_fart_action):
-		emit_signal("start_fart_drain")
+		StartFartAction()
 	
 	# Si le joueur arrete de lache un pet
 	if Input.is_action_just_released(move_fart_action):
-		emit_signal("stop_fart_drain")
+		StopFartAction()
 		
-	# Si le joueur court
-	#elif Input.is_action_pressed("button_B"):
-	#	run = Vector2(speedRun, speedRun) / 9.0
+	# Si le joueur cest en train de peter et qu'il a du gazz
+	if Input.is_action_pressed(move_fart_action) and FartManaDisponible==true:
+		run = Vector2(speedRun, speedRun) / 9.0
 	else:
 		run = Vector2(1.0, 1.0)
 
@@ -83,16 +85,22 @@ func _physics_process(_delta):
 
 #*--------------------------------------------------------------------------*//
 #*--    SIGNAL CALLBACKS    ------------------------------------------------*//
-
+func _on_FartManaDisponible(_FartManaDisponible)->void:
+	FartManaDisponible=_FartManaDisponible
 
 #*--------------------------------------------------------------------------*//
 #*--    USER METHODS    ----------------------------------------------------*//
 
-func ReadInputs() -> void:
-	var action: String = ""
-	
-	if (action != ""):
-		emit_signal("display_key", action)
+
+
+func StartFartAction() -> void:
+	emit_signal("start_fart_drain")
+	pass
+
+func StopFartAction() -> void:
+	emit_signal("stop_fart_drain")
+	pass
+
 
 
 #*--------------------------------------------------------------------------*//
