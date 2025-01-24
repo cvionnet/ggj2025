@@ -4,13 +4,12 @@
 [ext_resource type="PackedScene" path="res://src/HUD/HUD.tscn" id="2"]
 [ext_resource type="Texture2D" uid="uid://cevmyw5pvmccb" path="res://assets/scenes/background-swimming_pool.jpg" id="3_52myt"]
 
+
 [node name="Node" type="Node"]
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
 [node name="Control" parent="HUD" instance=ExtResource("2")]
-layout_mode = 3
-anchors_preset = 15
 grow_horizontal = 2
 grow_vertical = 2
 

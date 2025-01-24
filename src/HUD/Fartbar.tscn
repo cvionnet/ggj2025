@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bx7pjhectaviu"]
+
+[ext_resource type="Script" path="res://src/HUD/fartbar.gd" id="1_jaljj"]
+
+[node name="Fartbar" type="ProgressBar"]
+offset_right = 245.0
+offset_bottom = 27.0
+script = ExtResource("1_jaljj")
