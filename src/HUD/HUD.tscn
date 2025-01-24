@@ -1,16 +1,17 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=3 uid="uid://dfpuhpq8wc27u"]
 
-[ext_resource path="res://src/HUD/HUD.gd" type="Script" id=1]
+[ext_resource type="Script" path="res://src/HUD/HUD.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://bx7pjhectaviu" path="res://src/HUD/Fartbar.tscn" id="2_ua21g"]
 
 [node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+script = ExtResource("1")
 
 [node name="Label" type="Label" parent="."]
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -19,6 +20,6 @@ offset_left = -20.0
 offset_top = -14.0
 offset_right = 20.0
 text = "Touch"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+
+[node name="Fartbar" parent="." instance=ExtResource("2_ua21g")]
+layout_mode = 0

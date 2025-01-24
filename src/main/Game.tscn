@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://mg47hmbqyedf"]
 
 [ext_resource type="PackedScene" uid="uid://da2ak3xgrto8d" path="res://src/actors/Player.tscn" id="1"]
-[ext_resource type="PackedScene" path="res://src/HUD/HUD.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://dfpuhpq8wc27u" path="res://src/HUD/HUD.tscn" id="2"]
 [ext_resource type="Texture2D" uid="uid://b66cgrro5237s" path="res://assets/scenes/background.jpg" id="3"]
 
 [node name="Node" type="Node"]
@@ -9,8 +9,6 @@
 [node name="HUD" type="CanvasLayer" parent="."]
 
 [node name="Control" parent="HUD" instance=ExtResource("2")]
-layout_mode = 3
-anchors_preset = 15
 grow_horizontal = 2
 grow_vertical = 2
 
