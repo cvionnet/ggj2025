@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://da2ak3xgrto8d" path="res://src/actors/Player.tscn" id="1"]
 [ext_resource type="PackedScene" path="res://src/HUD/HUD.tscn" id="2"]
-[ext_resource type="Texture2D" uid="uid://b66cgrro5237s" path="res://assets/scenes/background.jpg" id="3"]
+[ext_resource type="Texture2D" uid="uid://cevmyw5pvmccb" path="res://assets/scenes/background-swimming_pool.jpg" id="3_52myt"]
 
 [node name="Node" type="Node"]
 
@@ -21,7 +21,6 @@ position = Vector2(172, 148)
 layer = -1
 follow_viewport_enabled = true
 
-[node name="Sprite2D" type="Sprite2D" parent="Background"]
-position = Vector2(642, 367.5)
-scale = Vector2(0.893056, 0.767708)
-texture = ExtResource("3")
+[node name="SwimmingPool" type="Sprite2D" parent="Background"]
+position = Vector2(619, 258)
+texture = ExtResource("3_52myt")
