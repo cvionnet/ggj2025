@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://mg47hmbqyedf"]
+[gd_scene load_steps=6 format=3 uid="uid://mg47hmbqyedf"]
 
 [ext_resource type="PackedScene" uid="uid://da2ak3xgrto8d" path="res://src/actors/Player.tscn" id="1"]
 [ext_resource type="PackedScene" uid="uid://bx7pjhectaviu" path="res://src/HUD/Fartbar.tscn" id="1_w1gev"]
-[ext_resource type="PackedScene" uid="uid://crv5ymd4ishjg" path="res://src/enemies/Enemy.tscn" id="3_8vtd5"]
-[ext_resource type="PackedScene" uid="uid://dpctq1r5db68f" path="res://src/items/SwimmingPool.tscn" id="4_dnmh0"]
+[ext_resource type="PackedScene" uid="uid://6qbug4glfiei" path="res://src/HUD/Suspiciousbar.tscn" id="2_8fxgb"]
+[ext_resource type="PackedScene" uid="uid://bu25ip1s17dnp" path="res://src/enemies/Enemy.tscn" id="3_8vtd5"]
+[ext_resource type="PackedScene" path="res://src/items/SwimmingPool.tscn" id="4_dnmh0"]
 
 [node name="Node" type="Node2D"]
 position = Vector2(147.5, 268)
@@ -15,6 +16,13 @@ offset_left = 17.0
 offset_top = 7.5
 offset_right = 224.0
 offset_bottom = 79.5
+
+[node name="Suspiciousbar" parent="HUD" instance=ExtResource("2_8fxgb")]
+offset_left = 434.0
+offset_top = 17.0
+offset_right = 640.0
+offset_bottom = 63.0
+max_value = 20.0
 
 [node name="Player" parent="." instance=ExtResource("1")]
 position = Vector2(172, 148)
@@ -34,7 +42,7 @@ enemy_type = 1
 position = Vector2(452, -91)
 
 [node name="Enemy4" parent="." instance=ExtResource("3_8vtd5")]
-position = Vector2(387, 143)
+position = Vector2(375.5, 60)
 enemy_type = 2
 
 [node name="Enemy5" parent="." instance=ExtResource("3_8vtd5")]
