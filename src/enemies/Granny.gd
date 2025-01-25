@@ -44,15 +44,18 @@ var FartManaDisponible := false
 #*--------------------------------------------------------------------------*//
 #*--    GODOT METHODS    ---------------------------------------------------*//
 
-
-# Not synced with physics. Execution done after the physics step
-func _process(_delta):
-	pass
-
 func _ready() -> void:
 	var player = get_node('/root').find_child("Fartbar", true, false)
 	player.connect("FartManaDisponible", Callable(self, "_on_FartManaDisponible"))
 
+	# # Create a ripple effect as a child node
+	# var ripple = preload("res://src/Items/Ripples.tscn").instance()
+	# add_child(ripple)
+	# ripple.position = Vector2.ZERO  # Centered on the player
+
+# Not synced with physics. Execution done after the physics step
+func _process(_delta):
+	pass
 
 # For processes that must happen before each physics step, such as controlling a character
 func _physics_process(_delta):
@@ -61,6 +64,8 @@ func _physics_process(_delta):
 		Input.get_action_strength(move_down_action) - Input.get_action_strength(move_up_action)
 	)
 	direction = direction.normalized()
+	
+	# $Ripples.show()
 
 	# Si le joueur lache un pet
 	if Input.is_action_just_pressed(move_fart_action):
