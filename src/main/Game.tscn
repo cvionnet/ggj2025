@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://da2ak3xgrto8d" path="res://src/actors/Player.tscn" id="1"]
 [ext_resource type="PackedScene" uid="uid://bx7pjhectaviu" path="res://src/HUD/Fartbar.tscn" id="1_w1gev"]
-[ext_resource type="PackedScene" uid="uid://bvqn1a7rkx1n6" path="res://src/enemies/Granny.tscn" id="3_5mvsx"]
+[ext_resource type="PackedScene" uid="uid://bu25ip1s17dnp" path="res://src/enemies/Enemy.tscn" id="3_8vtd5"]
 [ext_resource type="Texture2D" uid="uid://cevmyw5pvmccb" path="res://assets/scenes/background-swimming_pool.jpg" id="3_52myt"]
 [ext_resource type="Shader" path="res://src/main/background-water.gdshader" id="4_5pq6i"]
 [ext_resource type="Texture2D" uid="uid://c0df3bsu6q0h" path="res://assets/scenes/background-water.jpg" id="5_u4ln1"]
@@ -25,8 +25,10 @@ shader_parameter/ripple_amplitude = 0.002
 [node name="Player" parent="." instance=ExtResource("1")]
 position = Vector2(172, 148)
 
-[node name="Player2" parent="." instance=ExtResource("3_5mvsx")]
-position = Vector2(635, 45)
+[node name="Enemy" parent="." instance=ExtResource("3_8vtd5")]
+position = Vector2(614, 63)
+base_speed = 75.0
+enemy_type = 0
 
 [node name="Background" type="CanvasLayer" parent="."]
 layer = -1
