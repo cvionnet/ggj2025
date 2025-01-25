@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bw2xblehf6vg"]
+
+[ext_resource type="Shader" path="res://src/Items/Ripples.gdshader" id="1_q4hoq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sebuc"]
+shader = ExtResource("1_q4hoq")
+shader_parameter/ripple_radius = 0.5
+shader_parameter/ripple_amplitude = 0.02
+shader_parameter/ripple_speed = 1.0
+
+[node name="Ripples" type="Node2D"]
+material = SubResource("ShaderMaterial_sebuc")

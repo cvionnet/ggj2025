@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://ch73qijvq756v"]
+[gd_scene load_steps=4 format=3 uid="uid://ch73qijvq756v"]
 
 [ext_resource type="Texture2D" uid="uid://dvkfkphrciaeh" path="res://assets/items/bubble1.png" id="1_0twki"]
 
@@ -18,6 +18,9 @@ hue_variation_min = -0.57
 hue_variation_max = -2.23517e-08
 turbulence_noise_strength = 5.65
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_quum1"]
+radius = 204.353
+
 [node name="Bubbles" type="Node2D"]
 scale = Vector2(0.5, 0.5)
 
@@ -27,3 +30,9 @@ process_material = SubResource("ParticleProcessMaterial_ed54m")
 texture = ExtResource("1_0twki")
 lifetime = 1.8
 speed_scale = 0.86
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_quum1")
