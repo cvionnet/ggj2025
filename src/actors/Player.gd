@@ -7,6 +7,7 @@ extends CharacterBody2D
 @export var speedRun: float = 20.0
 @export var inertia: float = 0.15 # proche 0.0 = déplacement "lourd"  /  proche 1.0 = déplacement aérien
 
+@onready var sprite = $Sprite2D 
 
 # Déclaration des signaux
 signal start_fart_drain()
@@ -78,6 +79,7 @@ func _physics_process(_delta):
 
 	# Interprétation lineaire entre la dernière vélocité connue et la nouvelle pour rendre le déplacement plus "smooth"
 	_velocity = lerp(_velocity, direction * speed * run, inertia)
+	sprite.rotation = _velocity.angle() + deg_to_rad(-90)  # Ajoute 90° en radians
 
 	set_velocity(_velocity)
 	move_and_slide()

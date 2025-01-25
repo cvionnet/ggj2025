@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://dfpuhpq8wc27u"]
+[gd_scene load_steps=2 format=3 uid="uid://dfpuhpq8wc27u"]
 
 [ext_resource type="Script" path="res://src/HUD/HUD.gd" id="1"]
-[ext_resource type="PackedScene" uid="uid://bx7pjhectaviu" path="res://src/HUD/Fartbar.tscn" id="2_ua21g"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -22,6 +21,3 @@ offset_left = -20.0
 offset_top = -14.0
 offset_right = 20.0
 text = "Touch"
-
-[node name="Fartbar" parent="." instance=ExtResource("2_ua21g")]
-layout_mode = 0

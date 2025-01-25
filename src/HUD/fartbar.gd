@@ -25,6 +25,7 @@ func _process(delta: float) -> void:
 	pass
 
 
+
 #*--------------------------------------------------------------------------*//
 #*--    GODOT METHODS    ---------------------------------------------------*//
 
@@ -56,4 +57,27 @@ func stop_draining_fact():
 		await get_tree().create_timer(TimeFartLoad).timeout  # Attente de 0.1 seconde
 	
 	if(FartMana>100):
-		print("Game Overs")
+		trigger_explosion()
+
+
+func spawn_bubble_particles():
+	# Ajoute des particules de bulles pour animer la barre
+	#var particles = FartBubble_particle_scene.instantiate()
+	#particles.global_position = global_position + Vector2(randi() % rect_size.x, -10)
+	#get_tree().current_scene.add_child(particles)
+	$Explosion.play("Defaut")
+	$Explosion.stop()
+	pass
+
+
+func trigger_explosion():
+	# Crée un effet d'explosion
+	#var explosion = explosion_scene.instantiate()
+	#explosion.global_position = global_position  # Place l'explosion sur la barre
+	#get_tree().current_scene.add_child(explosion)
+	
+	$Explosion.play("Explosion")
+	
+	# Déclenche le Game Over
+	print("Game Over ! Trop de pression !")
+	#get_tree().reload_current_scene()
