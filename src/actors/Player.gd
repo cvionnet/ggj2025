@@ -13,6 +13,7 @@ extends CharacterBody2D
 signal start_fart_drain()
 signal stop_fart_drain()
 signal display_key(key)
+signal sound_of_fart_is_detected()
 
 var direction: Vector2 = Vector2.ZERO
 var _velocity: Vector2 = Vector2.ZERO
@@ -104,6 +105,13 @@ func _on_FartMalus(_FartMalus) -> void:
 	FartMalus = _FartMalus
 	FartAction(FartMalus)
 
+
+func _on_fart_noise_area_area_entered(area: Area2D) -> void:
+	if area.is_in_group("Enemy"):
+		emit_signal("sound_of_fart_is_detected")
+		print("Le sond du prout is dectected")
+	pass # Replace with function body.
+
 #*--------------------------------------------------------------------------*//
 #*--    USER METHODS    ----------------------------------------------------*//
 
@@ -117,11 +125,6 @@ func FartAction(IsFartActif) -> void:
 	$"Bubble-back".FartActif(IsFartActif)
 	$"Bubble-front".FartActif(IsFartActif)
 	
-	if (IsFartActif):
-		print("Pet en cours")
-	else:
-		print("Pas de prout en cours")
-	pass
 
 func StopFartAction() -> void:
 	emit_signal("stop_fart_drain")
