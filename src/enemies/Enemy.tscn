@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bu25ip1s17dnp"]
+[gd_scene load_steps=8 format=3 uid="uid://crv5ymd4ishjg"]
 
 [ext_resource type="Script" path="res://src/enemies/enemy.gd" id="1_4cbuq"]
 [ext_resource type="Texture2D" uid="uid://bnktf0l5sp3j5" path="res://assets/actors/enemies/granny.png" id="1_4sjww"]
