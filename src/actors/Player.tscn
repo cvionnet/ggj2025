@@ -67,4 +67,3 @@ script = ExtResource("3_6yy70")
 shape = SubResource("CircleShape2D_x5r6r")
 
 [connection signal="area_entered" from="FartNoiseArea" to="." method="_on_fart_noise_area_area_entered"]
-[connection signal="body_entered" from="FartNoiseArea" to="." method="_on_fart_noise_area_body_entered"]

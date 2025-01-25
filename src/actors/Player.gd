@@ -13,7 +13,7 @@ extends CharacterBody2D
 signal start_fart_drain()
 signal stop_fart_drain()
 signal display_key(key)
-signal fart_is_detected()
+signal sound_of_fart_is_detected()
 
 var direction: Vector2 = Vector2.ZERO
 var _velocity: Vector2 = Vector2.ZERO
@@ -106,20 +106,10 @@ func _on_FartMalus(_FartMalus) -> void:
 	FartAction(FartMalus)
 
 
-func _on_fart_noise_area_body_entered(body: Node2D) -> void:
-	print("event")
-	if body.is_in_group("enemy"):
-		emit_signal("fart_is_detected")
-		print("Le sond du prout is dectected")
-	pass # Replace with function body.
-
-
 func _on_fart_noise_area_area_entered(area: Area2D) -> void:
-	print("_on_fart_noise_area_area_entered")
-	if area.is_in_group("enemy"):
-		emit_signal("fart_is_detected")
+	if area.is_in_group("Enemy"):
+		emit_signal("sound_of_fart_is_detected")
 		print("Le sond du prout is dectected")
-	pass # Replace with function body.
 	pass # Replace with function body.
 
 #*--------------------------------------------------------------------------*//
