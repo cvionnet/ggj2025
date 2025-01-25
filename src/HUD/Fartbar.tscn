@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bx7pjhectaviu"]
 
 [ext_resource type="Script" path="res://src/HUD/fartbar.gd" id="1_jaljj"]
-[ext_resource type="Texture2D" uid="uid://bhsee554tvykq" path="res://assets/UI/Fartbar/Bouteille.png" id="2_eit5d"]
+[ext_resource type="PackedScene" uid="uid://50j0jqsxumqx" path="res://src/items/BubblesFartBar.tscn" id="2_n2mjy"]
 
 [sub_resource type="Theme" id="Theme_1jdbs"]
 
@@ -16,19 +16,16 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
 [node name="Fartbar" type="ProgressBar"]
-offset_left = 33.0
+offset_left = 36.0
 offset_top = 9.0
 offset_right = 250.0
-offset_bottom = 87.0
+offset_bottom = 86.0
 theme = SubResource("Theme_1jdbs")
 theme_override_styles/background = SubResource("StyleBoxFlat_stju0")
 theme_override_styles/fill = SubResource("StyleBoxFlat_l6l6v")
-value = 50.0
+value = 100.0
 show_percentage = false
 script = ExtResource("1_jaljj")
 
-[node name="Bouteille" type="Sprite2D" parent="."]
-position = Vector2(118.822, 36.5297)
-rotation = 1.5708
-scale = Vector2(0.938198, 1.23779)
-texture = ExtResource("2_eit5d")
+[node name="BubblesFartBar" parent="." instance=ExtResource("2_n2mjy")]
+position = Vector2(81, 40)

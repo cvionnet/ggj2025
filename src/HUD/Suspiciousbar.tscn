@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://wtoxix0p5lnb"]
+[gd_scene load_steps=5 format=3 uid="uid://wtoxix0p5lnb"]
 
 [ext_resource type="Script" path="res://src/HUD/suspiciousbar.gd" id="1_2asgb"]
 [ext_resource type="Texture2D" uid="uid://doak0grpm7pys" path="res://assets/UI/Souspiciousbar/Nanometer.png" id="2_qchc4"]
+[ext_resource type="Texture2D" uid="uid://cjfv6x6b3r6kf" path="res://assets/UI/Souspiciousbar/ImageDebug.png" id="2_sl34l"]
 [ext_resource type="Texture2D" uid="uid://di7fs3igbreh3" path="res://assets/UI/Souspiciousbar/needle.png" id="3_w1ivh"]
 
 [node name="Suspiciousbar" type="Node2D"]
@@ -12,8 +13,13 @@ offset_left = -78.0
 offset_top = -82.0
 offset_right = 72.0
 offset_bottom = 23.0
-texture = ExtResource("2_qchc4")
+texture = ExtResource("2_sl34l")
 expand_mode = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-3, -30)
+scale = Vector2(0.321136, 0.308383)
+texture = ExtResource("2_qchc4")
 
 [node name="needle" type="Sprite2D" parent="."]
 scale = Vector2(0.285714, 0.285714)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ddeobmtdnea8s"
-path="res://.godot/imported/0042.png-dc30b428f3a48354f450d31ee0dc8ede.ctex"
+uid="uid://cjfv6x6b3r6kf"
+path="res://.godot/imported/ImageDebug.png-ea216fd43f31d1dd0f67366171bc1786.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI/Fartbar/GasExplosion1/0042.png"
-dest_files=["res://.godot/imported/0042.png-dc30b428f3a48354f450d31ee0dc8ede.ctex"]
+source_file="res://assets/UI/Souspiciousbar/ImageDebug.png"
+dest_files=["res://.godot/imported/ImageDebug.png-ea216fd43f31d1dd0f67366171bc1786.ctex"]
 
 [params]
 
