@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://slio7u40mx3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3eq3j"]
+radius = 204.353
+
+[node name="Bubble-detection" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_3eq3j")
