@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bvqn1a7rkx1n6"]
+[gd_scene load_steps=5 format=3 uid="uid://bvqn1a7rkx1n6"]
 
 [ext_resource type="Script" path="res://src/enemies/Granny.gd" id="2"]
-[ext_resource type="PackedScene" uid="uid://ch73qijvq756v" path="res://src/items/Bubbles.tscn" id="2_8p4hi"]
 [ext_resource type="Texture2D" uid="uid://bnktf0l5sp3j5" path="res://assets/actors/enemies/granny.png" id="2_a7lnw"]
-[ext_resource type="PackedScene" path="res://src/Items/Ripples.tscn" id="4_lpqmd"]
+[ext_resource type="PackedScene" uid="uid://bw2xblehf6vg" path="res://src/Items/Ripples.tscn" id="4_lpqmd"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(8, 8)
@@ -12,46 +11,13 @@ size = Vector2(8, 8)
 script = ExtResource("2")
 inertia = 0.1
 
-[node name="Bubble-back" type="Node2D" parent="."]
-
-[node name="Bubbles2" parent="Bubble-back" instance=ExtResource("2_8p4hi")]
-position = Vector2(-26, -32)
-scale = Vector2(0.25, 0.25)
-
-[node name="Bubbles1" parent="Bubble-back" instance=ExtResource("2_8p4hi")]
-position = Vector2(37, -7)
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -7)
 texture = ExtResource("2_a7lnw")
 
-[node name="Bubble-front" type="Node2D" parent="."]
-
-[node name="Bubbles2" parent="Bubble-front" instance=ExtResource("2_8p4hi")]
-position = Vector2(-42, 34)
-scale = Vector2(0.25, 0.25)
-
-[node name="Bubbles1" parent="Bubble-front" instance=ExtResource("2_8p4hi")]
-position = Vector2(36, 43)
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -4)
 shape = SubResource("1")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.5, 0.5)
-limit_left = 0
-limit_top = 0
-limit_right = 715
-limit_bottom = 475
-limit_smoothed = true
-position_smoothing_enabled = true
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
-drag_left_margin = 0.0
-drag_top_margin = 0.0
-drag_right_margin = 0.0
-drag_bottom_margin = 0.0
 
 [node name="Ripples" parent="." instance=ExtResource("4_lpqmd")]
 visible = false

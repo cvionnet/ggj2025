@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://src/actors/Player.gd" id="2"]
 [ext_resource type="Script" path="res://src/actors/bubble_back.gd" id="2_a6v1n"]
-[ext_resource type="PackedScene" uid="uid://ch73qijvq756v" path="res://src/items/Bubbles.tscn" id="2_tl1nc"]
+[ext_resource type="PackedScene" uid="uid://ch73qijvq756v" path="res://src/Items/Bubbles.tscn" id="2_tl1nc"]
 [ext_resource type="Texture2D" uid="uid://cjv211rwugprg" path="res://assets/actors/player/player64.png" id="2_tpyct"]
 [ext_resource type="Script" path="res://src/actors/fart_noise_area.gd" id="3_6yy70"]
 
@@ -14,52 +14,52 @@ radius = 170.238
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("2")
+speed = 200.0
 inertia = 0.1
 
 [node name="Bubble-back" type="Node2D" parent="."]
 script = ExtResource("2_a6v1n")
 
 [node name="Bubbles2" parent="Bubble-back" instance=ExtResource("2_tl1nc")]
-position = Vector2(-26, -32)
+position = Vector2(-50, -38)
 scale = Vector2(0.25, 0.25)
 
 [node name="Bubbles1" parent="Bubble-back" instance=ExtResource("2_tl1nc")]
-position = Vector2(37, -7)
+position = Vector2(43, -40)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -7)
 texture = ExtResource("2_tpyct")
 
 [node name="Bubble-front" type="Node2D" parent="."]
+script = ExtResource("2_a6v1n")
 
 [node name="Bubbles2" parent="Bubble-front" instance=ExtResource("2_tl1nc")]
-position = Vector2(-35, 11)
+position = Vector2(-44, 32)
 scale = Vector2(0.25, 0.25)
 
 [node name="Bubbles1" parent="Bubble-front" instance=ExtResource("2_tl1nc")]
-position = Vector2(31, 13)
+position = Vector2(41, 25)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -4)
 shape = SubResource("1")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.5, 0.5)
-limit_left = 0
-limit_top = 0
-limit_right = 715
-limit_bottom = 475
+zoom = Vector2(1.1, 1.1)
+limit_left = 10
+limit_top = -360
+limit_right = 1460
+limit_bottom = 1400
 limit_smoothed = true
 position_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
-drag_left_margin = 0.0
-drag_top_margin = 0.0
-drag_right_margin = 0.0
-drag_bottom_margin = 0.0
+editor_draw_limits = true
+editor_draw_drag_margin = true
 
 [node name="FartNoiseArea" type="Area2D" parent="."]
-visible = false
+collision_layer = 2
 script = ExtResource("3_6yy70")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FartNoiseArea"]
