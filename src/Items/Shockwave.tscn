@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0v4e6ahtrm41"]
+
+[ext_resource type="Texture2D" uid="uid://dtqmnxw3p1s3v" path="res://assets/items/shockwave.png" id="1_ofxcm"]
+
+[node name="Shockwave" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ofxcm")

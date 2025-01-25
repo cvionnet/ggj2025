@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://da2ak3xgrto8d"]
+[gd_scene load_steps=9 format=3 uid="uid://da2ak3xgrto8d"]
 
 [ext_resource type="Script" path="res://src/actors/Player.gd" id="2"]
 [ext_resource type="Script" path="res://src/actors/bubble_back.gd" id="2_a6v1n"]
 [ext_resource type="PackedScene" uid="uid://ch73qijvq756v" path="res://src/items/Bubbles.tscn" id="2_tl1nc"]
 [ext_resource type="Texture2D" uid="uid://cjv211rwugprg" path="res://assets/actors/player/player64.png" id="2_tpyct"]
 [ext_resource type="Script" path="res://src/actors/fart_noise_area.gd" id="3_6yy70"]
+[ext_resource type="PackedScene" uid="uid://c0v4e6ahtrm41" path="res://src/items/Shockwave.tscn" id="4_o63li"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(8, 8)
@@ -16,6 +17,8 @@ radius = 170.238
 script = ExtResource("2")
 speed = 200.0
 inertia = 0.1
+
+[node name="Shockwave" parent="." instance=ExtResource("4_o63li")]
 
 [node name="Bubble-back" type="Node2D" parent="."]
 script = ExtResource("2_a6v1n")
