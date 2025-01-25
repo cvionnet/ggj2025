@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://bvqn1a7rkx1n6"]
 
 [ext_resource type="Script" path="res://src/enemies/Granny.gd" id="2"]
-[ext_resource type="PackedScene" uid="uid://ch73qijvq756v" path="res://src/Items/Bubbles.tscn" id="2_8p4hi"]
+[ext_resource type="PackedScene" uid="uid://ch73qijvq756v" path="res://src/items/Bubbles.tscn" id="2_8p4hi"]
 [ext_resource type="Texture2D" uid="uid://bnktf0l5sp3j5" path="res://assets/actors/enemies/granny.png" id="2_a7lnw"]
-[ext_resource type="PackedScene" uid="uid://bw2xblehf6vg" path="res://src/Items/Ripples.tscn" id="4_lpqmd"]
+[ext_resource type="PackedScene" path="res://src/Items/Ripples.tscn" id="4_lpqmd"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(8, 8)

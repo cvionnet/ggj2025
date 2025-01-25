@@ -1,6 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://da2ak3xgrto8d"]
+[gd_scene load_steps=8 format=3 uid="uid://da2ak3xgrto8d"]
 
 [ext_resource type="Script" path="res://src/actors/Player.gd" id="2"]
+[ext_resource type="Script" path="res://src/actors/bubble_back.gd" id="2_a6v1n"]
+[ext_resource type="PackedScene" uid="uid://ch73qijvq756v" path="res://src/items/Bubbles.tscn" id="2_tl1nc"]
 [ext_resource type="Texture2D" uid="uid://cjv211rwugprg" path="res://assets/actors/player/player64.png" id="2_tpyct"]
 [ext_resource type="Script" path="res://src/actors/fart_noise_area.gd" id="3_6yy70"]
 
@@ -14,9 +16,28 @@ radius = 170.238
 script = ExtResource("2")
 inertia = 0.1
 
+[node name="Bubble-back" type="Node2D" parent="."]
+script = ExtResource("2_a6v1n")
+
+[node name="Bubbles2" parent="Bubble-back" instance=ExtResource("2_tl1nc")]
+position = Vector2(-26, -32)
+scale = Vector2(0.25, 0.25)
+
+[node name="Bubbles1" parent="Bubble-back" instance=ExtResource("2_tl1nc")]
+position = Vector2(37, -7)
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -7)
 texture = ExtResource("2_tpyct")
+
+[node name="Bubble-front" type="Node2D" parent="."]
+
+[node name="Bubbles2" parent="Bubble-front" instance=ExtResource("2_tl1nc")]
+position = Vector2(-35, 11)
+scale = Vector2(0.25, 0.25)
+
+[node name="Bubbles1" parent="Bubble-front" instance=ExtResource("2_tl1nc")]
+position = Vector2(31, 13)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -4)
@@ -38,6 +59,7 @@ drag_right_margin = 0.0
 drag_bottom_margin = 0.0
 
 [node name="FartNoiseArea" type="Area2D" parent="."]
+visible = false
 script = ExtResource("3_6yy70")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FartNoiseArea"]

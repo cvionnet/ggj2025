@@ -55,6 +55,7 @@ func _ready() -> void:
 	var Fartbar = get_node('/root').find_child("Fartbar", true, false)
 	Fartbar.connect("FartManaDisponible", Callable(self, "_on_FartManaDisponible"))
 	Fartbar.connect("FartMalus",Callable(self, "_on_FartMalus"))
+	FartAction(FartMalus)
 
 
 # For processes that must happen before each physics step, such as controlling a character
@@ -113,6 +114,7 @@ func StartFartAction() -> void:
 
 func FartAction(IsFartActif)-> void:
 	$FartNoiseArea.set_detection_active(IsFartActif)
+	$"Bubble-back".FartActif(IsFartActif)
 	
 	if(IsFartActif):
 		print("Pet en cours")
