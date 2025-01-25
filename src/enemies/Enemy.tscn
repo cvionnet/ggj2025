@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://crv5ymd4ishjg"]
+[gd_scene load_steps=8 format=3 uid="uid://bu25ip1s17dnp"]
 
 [ext_resource type="Script" path="res://src/enemies/enemy.gd" id="1_4cbuq"]
 [ext_resource type="Texture2D" uid="uid://bnktf0l5sp3j5" path="res://assets/actors/enemies/granny.png" id="1_4sjww"]
@@ -10,6 +10,7 @@
 radius = 34.0147
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3o2sr"]
+resource_local_to_scene = true
 radius = 41.1947
 
 [node name="Enemy" type="CharacterBody2D" groups=["Enemy"]]
@@ -33,5 +34,6 @@ collision_mask = 3
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SafeZone"]
 shape = SubResource("CircleShape2D_3o2sr")
 
+[connection signal="area_entered" from="SafeZone" to="." method="_on_safe_zone_area_entered"]
 [connection signal="body_entered" from="SafeZone" to="." method="_on_safe_zone_body_entered"]
 [connection signal="body_exited" from="SafeZone" to="." method="_on_safe_zone_body_exited"]
