@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://da2ak3xgrto8d"]
+[gd_scene load_steps=10 format=3 uid="uid://da2ak3xgrto8d"]
 
 [ext_resource type="Script" path="res://src/actors/Player.gd" id="2"]
 [ext_resource type="Script" path="res://src/actors/bubble_back.gd" id="2_a6v1n"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cjv211rwugprg" path="res://assets/actors/player/player64.png" id="2_tpyct"]
 [ext_resource type="Script" path="res://src/actors/fart_noise_area.gd" id="3_6yy70"]
 [ext_resource type="PackedScene" uid="uid://c0v4e6ahtrm41" path="res://src/items/Shockwave.tscn" id="4_o63li"]
+[ext_resource type="Script" path="res://src/actors/camera_2d.gd" id="6_vhtyr"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(8, 8)
@@ -61,6 +62,7 @@ drag_horizontal_enabled = true
 drag_vertical_enabled = true
 editor_draw_limits = true
 editor_draw_drag_margin = true
+script = ExtResource("6_vhtyr")
 
 [node name="FartNoiseArea" type="Area2D" parent="."]
 collision_layer = 2

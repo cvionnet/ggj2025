@@ -12,7 +12,9 @@ var spawn_area = Rect2(Vector2(100, 100), Vector2(1000, 600))  # Zone où tu veu
 var spawn_interval = 5.0  # Intervalle entre chaque génération d'ennemi en secondes
 var timer: Timer
 
-@onready var camera = get_node("Camera2D") 
+@onready var water_area = $Background/Water
+@onready var player = get_node("Player")
+@onready var camera = player.get_node("Camera2D") 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -41,8 +43,15 @@ func _process(delta: float) -> void:
 
 # Fonction pour générer un ennemi à une position aléatoire
 func spawn_enemy(type : int):
+	if not water_area:
+		print("Erreur : La zone 'Water' n'existe pas.")
+		return
+	
 	var enemy_instance = enemy_scene.instantiate() # Instancier la scène de l'ennemi
 	enemy_instance.enemy_type = type
+	
+	var spawn_position = get_random_position_in_water_outside_camera_view()
+	
 	var random_position = Vector2(
 		randf_range(spawn_area.position.x, spawn_area.position.x + spawn_area.size.x),
 		randf_range(spawn_area.position.y, spawn_area.position.y + spawn_area.size.y)
@@ -50,27 +59,53 @@ func spawn_enemy(type : int):
 	enemy_instance.position = random_position  # Placer l'ennemi à la position générée
 	add_child(enemy_instance)  # Ajouter l'ennemi à la scène
 
+# Fonction pour obtenir une position aléatoire dans "Water"
+func get_random_position_in_water(margin: float = 100.0) -> Vector2:
+	var texture_size = water_area.texture.get_size()  # Taille de la texture
+	var scale = water_area.scale  # Échelle appliquée au sprite
+	var global_position = water_area.global_position  # Position globale du sprite
+	
+	# Calculer les dimensions réelles avec l'échelle
+	var width = texture_size.x * scale.x
+	var height = texture_size.y * scale.y
+	
+	# Obtenir une position aléatoire dans les limites du sprite
+	return Vector2(
+		randf_range(global_position.x - width / 2, global_position.x + width / 2),
+		randf_range(global_position.y - height / 2, global_position.y + height / 2)
+	)
 
 #Fonction pour obtenir une position aléatoire en dehors de la vue de la caméra
-func get_random_position_outside_camera_view() -> Vector2:
-	var camera_rect = camera.get_camera_rect()  # La zone visible par la caméra (en pixels)
-	var random_position = Vector2()
-	# Choisir une position en dehors de la caméra (en haut, en bas, à gauche, à droite)
-	match randi() % 4:
-		# En haut
-		0:
-			random_position.x = randf_range(0, get_viewport().size.x)
-			random_position.y = randf_range(0, camera_rect.position.y)  # Au-dessus de la caméra
-			# En bas
-		1:
-			random_position.x = randf_range(0, get_viewport().size.x)
-			random_position.y = randf_range(camera_rect.position.y + camera_rect.size.y, get_viewport().size.y)  # En-dessous de la caméra
-			 # À gauche
-		2:
-			random_position.x = randf_range(0, camera_rect.position.x)  # À gauche de la caméra
-			random_position.y = randf_range(0, get_viewport().size.y)
-		# À droite
-		3:
-			random_position.x = randf_range(camera_rect.position.x + camera_rect.size.x, get_viewport().size.x)  # À droite de la caméra
-			random_position.y = randf_range(0, get_viewport().size.y)
-	return random_position
+# Fonction pour obtenir une position aléatoire dans "Water", hors de la vue de la caméra
+func get_random_position_in_water_outside_camera_view(margin: float = 100.0) -> Vector2:
+	# Récupérer les dimensions de "Water"
+	var texture_size = water_area.texture.get_size()  # Taille de la texture
+	var scale = water_area.scale  # Échelle appliquée au sprite
+	var global_position = water_area.global_position  # Position globale du sprite
+	
+	# Calculer les dimensions réelles avec l'échelle
+	var width = texture_size.x * scale.x
+	var height = texture_size.y * scale.y
+
+	# Obtenir les limites de "Water"
+	var water_rect = Rect2(
+		global_position - Vector2(width, height) / 2,
+		Vector2(width, height)
+	)
+
+	# Récupérer les limites visibles de la caméra avec la marge
+	var camera_rect = camera.get_camera_rect()
+	camera_rect.position -= Vector2(margin, margin)  # Étendre la zone de la caméra
+	camera_rect.size += Vector2(margin * 2, margin * 2)
+	
+	# Générer une position dans "Water" mais en dehors de la vue de la caméra
+	var position = Vector2()
+	while true:
+		position = Vector2(
+			randf_range(water_rect.position.x, water_rect.position.x + water_rect.size.x),
+			randf_range(water_rect.position.y, water_rect.position.y + water_rect.size.y)
+		)
+		# Vérifier que la position est en dehors de la caméra
+		if not camera_rect.has_point(position):
+			break
+	return position
