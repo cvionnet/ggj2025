@@ -41,6 +41,7 @@ var dying_animation := "dying"
 
 # State #
 var FartManaDisponible := false
+var FartMalus := false
 
 #*--------------------------------------------------------------------------*//
 #*--    GODOT METHODS    ---------------------------------------------------*//
@@ -51,34 +52,42 @@ func _process(_delta):
 	pass
 
 func _ready() -> void:
-	var player = get_node('/root').find_child("Fartbar", true, false)
-	player.connect("FartManaDisponible", Callable(self, "_on_FartManaDisponible"))
+	var Fartbar = get_node('/root').find_child("Fartbar", true, false)
+	Fartbar.connect("FartManaDisponible", Callable(self, "_on_FartManaDisponible"))
+	Fartbar.connect("FartMalus",Callable(self, "_on_FartMalus"))
 
 
 # For processes that must happen before each physics step, such as controlling a character
 func _physics_process(_delta):
-	direction = Vector2(
-		Input.get_action_strength(move_right_action) - Input.get_action_strength(move_left_action),
-		Input.get_action_strength(move_down_action) - Input.get_action_strength(move_up_action)
-	)
-	direction = direction.normalized()
-
-	# Si le joueur lache un pet
-	if Input.is_action_just_pressed(move_fart_action):
-		StartFartAction()
 	
-	# Si le joueur arrete de lache un pet
-	if Input.is_action_just_released(move_fart_action):
-		StopFartAction()
+	
+	if FartMalus== false:
+		direction = Vector2(
+			Input.get_action_strength(move_right_action) - Input.get_action_strength(move_left_action),
+			Input.get_action_strength(move_down_action) - Input.get_action_strength(move_up_action)
+		)
 		
+		# Si le joueur lache un pet
+		if Input.is_action_just_pressed(move_fart_action):
+			StartFartAction()
+		
+		# Si le joueur arrete de lache un pet
+		if Input.is_action_just_released(move_fart_action):
+			StopFartAction()
+		
+	else:
+		# Si FartMalus est actif, on garde la direction actuelle et n'applique pas les entrées
+		direction = Vector2.ZERO
+	direction = direction.normalized()
+	
 	# Si le joueur cest en train de peter et qu'il a du gazz
 	if Input.is_action_pressed(move_fart_action) and FartManaDisponible==true:
 		run = Vector2(speedRun, speedRun) / 9.0
 	else:
 		run = Vector2(1.0, 1.0)
-
-	# Interprétation lineaire entre la dernière vélocité connue et la nouvelle pour rendre le déplacement plus "smooth"
+	
 	_velocity = lerp(_velocity, direction * speed * run, inertia)
+	
 	sprite.rotation = _velocity.angle() + deg_to_rad(-90)  # Ajoute 90° en radians
 
 	set_velocity(_velocity)
@@ -90,17 +99,28 @@ func _physics_process(_delta):
 func _on_FartManaDisponible(_FartManaDisponible)->void:
 	FartManaDisponible=_FartManaDisponible
 
+func _on_FartMalus(_FartMalus)->void:
+	FartMalus = _FartMalus
+	FartAction(FartMalus)
+
 #*--------------------------------------------------------------------------*//
 #*--    USER METHODS    ----------------------------------------------------*//
 
-
-
 func StartFartAction() -> void:
 	emit_signal("start_fart_drain")
+	FartAction(true);
+	pass
+
+func FartAction(IsFartActif)-> void:
+	if(IsFartActif):
+		print("Pet en cours")
+	else:
+		print("Pas de prout en cours")
 	pass
 
 func StopFartAction() -> void:
 	emit_signal("stop_fart_drain")
+	FartAction(false);
 	pass
 
 

@@ -7,9 +7,11 @@ var FartMana = 0  # Mana de prout initiale
 @export var FartExpulsion = 5  # expulstionde prout initiale
 @export var TimeFartLoad = 0.1
 var is_fart_active = false
+var is_fart_malus_active = false
 
 #*--    SIGNAL -------*//
 signal FartManaDisponible(IsDisponible)
+signal FartMalus(IsActif)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -39,11 +41,16 @@ func _on_stop_fart_drain():
 
 func start_draining_fact():
 	# Boucle pour vider la mana tant que le bouton est maintenu
-	while is_fart_active and FartMana > 0:
+	while (is_fart_active or is_fart_malus_active) and FartMana > 0:
 		FartMana -= FartExpulsion  # Réduit la mana
 		value = FartMana  # Met à jour la barre (ajuste selon ton ProgressBar)
 		await get_tree().create_timer(TimeFartLoad).timeout  # Attente de 0.1 seconde
+	
 	emit_signal("FartManaDisponible", FartMana>1)
+	if(is_fart_malus_active):
+		is_fart_malus_active = false
+		emit_signal("FartMalus", is_fart_malus_active)
+		stop_draining_fact()
 	
 
 
@@ -57,7 +64,7 @@ func stop_draining_fact():
 		await get_tree().create_timer(TimeFartLoad).timeout  # Attente de 0.1 seconde
 	
 	if(FartMana>100):
-		trigger_explosion()
+		trigger_malus()
 
 
 func spawn_bubble_particles():
@@ -65,19 +72,18 @@ func spawn_bubble_particles():
 	#var particles = FartBubble_particle_scene.instantiate()
 	#particles.global_position = global_position + Vector2(randi() % rect_size.x, -10)
 	#get_tree().current_scene.add_child(particles)
-	$Explosion.play("Defaut")
-	$Explosion.stop()
+	
 	pass
 
 
-func trigger_explosion():
+func trigger_malus():
 	# Crée un effet d'explosion
 	#var explosion = explosion_scene.instantiate()
 	#explosion.global_position = global_position  # Place l'explosion sur la barre
 	#get_tree().current_scene.add_child(explosion)
-	
-	$Explosion.play("Explosion")
-	
+	is_fart_malus_active = true
+	emit_signal("FartMalus", is_fart_malus_active)
+	start_draining_fact();
 	# Déclenche le Game Over
-	print("Game Over ! Trop de pression !")
+	print("Malus! Trop de pression !")
 	#get_tree().reload_current_scene()
