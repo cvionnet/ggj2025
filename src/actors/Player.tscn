@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://da2ak3xgrto8d"]
+[gd_scene load_steps=6 format=3 uid="uid://da2ak3xgrto8d"]
 
 [ext_resource type="Script" path="res://src/actors/Player.gd" id="2"]
 [ext_resource type="Texture2D" uid="uid://cjv211rwugprg" path="res://assets/actors/player/player64.png" id="2_tpyct"]
+[ext_resource type="Script" path="res://src/actors/fart_noise_area.gd" id="3_6yy70"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(8, 8)
@@ -37,6 +38,7 @@ drag_right_margin = 0.0
 drag_bottom_margin = 0.0
 
 [node name="FartNoiseArea" type="Area2D" parent="."]
+script = ExtResource("3_6yy70")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FartNoiseArea"]
 shape = SubResource("CircleShape2D_x5r6r")
