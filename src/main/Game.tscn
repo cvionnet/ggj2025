@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://mg47hmbqyedf"]
 
 [ext_resource type="PackedScene" uid="uid://da2ak3xgrto8d" path="res://src/actors/Player.tscn" id="1"]
-[ext_resource type="PackedScene" path="res://src/HUD/Fartbar.tscn" id="1_w1gev"]
+[ext_resource type="PackedScene" uid="uid://bx7pjhectaviu" path="res://src/HUD/Fartbar.tscn" id="1_w1gev"]
 [ext_resource type="PackedScene" uid="uid://bvqn1a7rkx1n6" path="res://src/enemies/Granny.tscn" id="3_5mvsx"]
 [ext_resource type="Texture2D" uid="uid://cevmyw5pvmccb" path="res://assets/scenes/background-swimming_pool.jpg" id="3_52myt"]
 [ext_resource type="Shader" path="res://src/main/background-water.gdshader" id="4_5pq6i"]

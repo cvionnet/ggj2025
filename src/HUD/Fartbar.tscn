@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://bx7pjhectaviu"]
+[gd_scene load_steps=3 format=3 uid="uid://bx7pjhectaviu"]
 
 [ext_resource type="Script" path="res://src/HUD/fartbar.gd" id="1_jaljj"]
-[ext_resource type="PackedScene" uid="uid://thnwapyxgtfs" path="res://src/HUD/Explosion.tscn" id="2_02136"]
 [ext_resource type="Texture2D" uid="uid://bhsee554tvykq" path="res://assets/UI/Fartbar/Bouteille.png" id="2_eit5d"]
 
 [node name="Fartbar" type="ProgressBar"]
@@ -16,10 +15,3 @@ position = Vector2(126.811, 36)
 rotation = 1.5708
 scale = Vector2(1, 1.20979)
 texture = ExtResource("2_eit5d")
-
-[node name="Explosion" parent="." instance=ExtResource("2_02136")]
-position = Vector2(220, 32)
-scale = Vector2(2.7402, 3.16185)
-animation = &"Defaut"
-frame_progress = 0.125756
-speed_scale = 10.0
