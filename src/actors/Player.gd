@@ -114,8 +114,10 @@ func StartFartAction() -> void:
 func FartAction(IsFartActif)-> void:
 	if(IsFartActif):
 		print("Pet en cours")
+		$FartNoiseArea/CollisionShape2D.disabled = false
 	else:
 		print("Pas de prout en cours")
+		$FartNoiseArea/CollisionShape2D.disabled = true
 	pass
 
 func StopFartAction() -> void:
