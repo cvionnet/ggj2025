@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dpctq1r5db68f"]
+[gd_scene load_steps=9 format=3 uid="uid://d1s75rimmebrx"]
 
 [ext_resource type="Texture2D" uid="uid://cevmyw5pvmccb" path="res://assets/scenes/background-swimming_pool.jpg" id="1_ammhb"]
 [ext_resource type="Shader" path="res://src/main/background-water.gdshader" id="2_acwxh"]
@@ -39,25 +39,26 @@ texture = ExtResource("3_kbawy")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
-[node name="Left" type="CollisionShape2D" parent="StaticBody2D" groups=["world"]]
+
+[node name="Left" type="CollisionShape2D" parent="StaticBody2D" groups=["wall"]]
 visible = false
 position = Vector2(244, 424)
 shape = SubResource("WorldBoundaryShape2D_0ho77")
 debug_color = Color(0.839216, 0.196078, 0.407843, 1)
 
-[node name="Right" type="CollisionShape2D" parent="StaticBody2D" groups=["world"]]
+[node name="Right" type="CollisionShape2D" parent="StaticBody2D" groups=["wall"]]
 visible = false
 position = Vector2(1268, 436)
 shape = SubResource("WorldBoundaryShape2D_15j0m")
 debug_color = Color(0.837479, 0.195785, 0.407227, 1)
 
-[node name="Up" type="CollisionShape2D" parent="StaticBody2D" groups=["world"]]
+[node name="Up" type="CollisionShape2D" parent="StaticBody2D" groups=["wall"]]
 visible = false
 position = Vector2(754, -163)
 shape = SubResource("WorldBoundaryShape2D_u6ljw")
 debug_color = Color(0.839216, 0.196078, 0.407843, 1)
 
-[node name="Down" type="CollisionShape2D" parent="StaticBody2D" groups=["world"]]
+[node name="Down" type="CollisionShape2D" parent="StaticBody2D" groups=["wall"]]
 visible = false
 position = Vector2(748, 1279)
 shape = SubResource("WorldBoundaryShape2D_fy4va")

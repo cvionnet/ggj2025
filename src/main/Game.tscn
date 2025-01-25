@@ -2,8 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://da2ak3xgrto8d" path="res://src/actors/Player.tscn" id="1"]
 [ext_resource type="PackedScene" uid="uid://bx7pjhectaviu" path="res://src/HUD/Fartbar.tscn" id="1_w1gev"]
-[ext_resource type="PackedScene" uid="uid://crv5ymd4ishjg" path="res://src/enemies/Enemy.tscn" id="3_8vtd5"]
-[ext_resource type="PackedScene" uid="uid://dpctq1r5db68f" path="res://src/items/SwimmingPool.tscn" id="4_dnmh0"]
+[ext_resource type="PackedScene" uid="uid://wtoxix0p5lnb" path="res://src/HUD/Suspiciousbar.tscn" id="2_8fxgb"]
+[ext_resource type="PackedScene" uid="uid://bu25ip1s17dnp" path="res://src/enemies/Enemy.tscn" id="3_8vtd5"]
+[ext_resource type="PackedScene" path="res://src/items/SwimmingPool.tscn" id="4_dnmh0"]
 
 [node name="Node" type="Node2D"]
 position = Vector2(147.5, 268)
@@ -15,6 +16,9 @@ offset_left = 17.0
 offset_top = 7.5
 offset_right = 224.0
 offset_bottom = 79.5
+
+[node name="Suspiciousbar" parent="HUD" instance=ExtResource("2_8fxgb")]
+position = Vector2(439, 73)
 
 [node name="Player" parent="." instance=ExtResource("1")]
 position = Vector2(172, 148)
