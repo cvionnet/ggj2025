@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://ch73qijvq756v"]
+
+[ext_resource type="Texture2D" uid="uid://dvkfkphrciaeh" path="res://assets/items/bubble1.png" id="1_0twki"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ed54m"]
+lifetime_randomness = 0.37
+particle_flag_disable_z = true
+emission_shape = 2
+emission_sphere_radius = 12.55
+angle_min = -216.7
+angle_max = 407.7
+gravity = Vector3(0, -90, 0)
+tangential_accel_min = -40.86
+tangential_accel_max = 43.73
+scale_min = 0.2
+scale_max = 1.5
+hue_variation_min = -0.57
+hue_variation_max = -2.23517e-08
+turbulence_noise_strength = 5.65
+
+[node name="Bubbles" type="Node2D"]
+scale = Vector2(0.5, 0.5)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+amount = 12
+process_material = SubResource("ParticleProcessMaterial_ed54m")
+texture = ExtResource("1_0twki")
+lifetime = 1.8
+speed_scale = 0.86
