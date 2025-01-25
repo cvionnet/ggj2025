@@ -56,7 +56,7 @@ enemy_type = 1
 position = Vector2(452, -91)
 
 [node name="Enemy4" parent="." instance=ExtResource("3_8vtd5")]
-position = Vector2(387, 143)
+position = Vector2(375.5, 60)
 enemy_type = 2
 
 [node name="Enemy5" parent="." instance=ExtResource("3_8vtd5")]

@@ -60,7 +60,11 @@ editor_draw_drag_margin = true
 
 [node name="FartNoiseArea" type="Area2D" parent="."]
 collision_layer = 2
+collision_mask = 2
 script = ExtResource("3_6yy70")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FartNoiseArea"]
 shape = SubResource("CircleShape2D_x5r6r")
+
+[connection signal="area_entered" from="FartNoiseArea" to="." method="_on_fart_noise_area_area_entered"]
+[connection signal="body_entered" from="FartNoiseArea" to="." method="_on_fart_noise_area_body_entered"]

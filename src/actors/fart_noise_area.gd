@@ -8,6 +8,7 @@ var detected_enemies: Array = []
 
 # Fonction appelée quand un corps entre dans la zone
 func _on_Area2D_body_entered(body):
+	
 	if detection_active and body.is_in_group("enemies"):
 		if body not in detected_enemies:
 			detected_enemies.append(body)
