@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://50j0jqsxumqx"]
+
+[ext_resource type="Texture2D" uid="uid://dukcsl32tmwyq" path="res://assets/items/bubble.png" id="1_sx1sf"]
+
+[sub_resource type="Curve" id="Curve_dwhsx"]
+min_value = -1.0
+_data = [Vector2(0.0128205, -0.0117357), 0.0, 0.0, 0, 0, Vector2(0.241026, 0.413836), 0.0, 0.0, 0, 0, Vector2(0.44359, 0.654725), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_njvsg"]
+curve = SubResource("Curve_dwhsx")
+
+[sub_resource type="Curve" id="Curve_amnws"]
+_data = [Vector2(0, 0.0926497), 0.0, 0.0, 0, 0, Vector2(0.248718, 1), 0.0, 0.0, 0, 0, Vector2(0.797436, 0.955837), 0.0, 0.0, 0, 0, Vector2(0.984615, 0.502162), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_ancer"]
+curve = SubResource("Curve_amnws")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ed54m"]
+lifetime_randomness = 0.11
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(80, 30, 1)
+emission_shape = 3
+emission_box_extents = Vector3(1.69, 1, 1)
+angle_min = -245.7
+angle_max = 294.7
+gravity = Vector3(90, 0, 0)
+tangential_accel_min = -20.69
+tangential_accel_max = 13.23
+scale_min = 0.2
+scale_max = 1.5
+scale_curve = SubResource("CurveTexture_ancer")
+hue_variation_curve = SubResource("CurveTexture_njvsg")
+turbulence_noise_strength = 5.65
+
+[node name="BubblesFartBar" type="Node2D"]
+scale = Vector2(0.5, 0.5)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+modulate = Color(0.643298, 1, 0.614177, 0.545098)
+position = Vector2(0, -2)
+amount = 10
+process_material = SubResource("ParticleProcessMaterial_ed54m")
+texture = ExtResource("1_sx1sf")
+speed_scale = 2.0
