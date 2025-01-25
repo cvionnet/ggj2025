@@ -13,6 +13,7 @@ enum EnemyType { GRANNY, MUSCLE, LIFEGUARD, BOY }
 
 # Référence au sprite
 @onready var sprite = $Sprite2D
+@onready var area_detection = $SafeZone  
 
 var HorizontalDirection: float = 0 # 1 vers la droite, -1 vers la gauche
 var VerticalDirection: float = 0 # 1 vers le haut , -1 vers la bas
@@ -20,6 +21,9 @@ var direction: Vector2 = Vector2(HorizontalDirection, VerticalDirection)  # Dire
 var change_direction_timer: float = 0.0  # Timer pour adoucir les changements de direction
 
 func _ready():
+	add_to_group("enemy")
+	area_detection.connect("body_entered", Callable( self, "_on_safe_zone_body_entered"))
+	area_detection.connect("body_exited", Callable( self, "_on_safe_zone_body_exited"))
 	print("Ennemi prêt : ", self.name, "Type :", enemy_type)
 	configure_enemy()
 	direction = Vector2(HorizontalDirection, VerticalDirection)
@@ -134,7 +138,14 @@ func move_default(delta):
 	velocity = direction* get_speed() 
 	move_and_slide()
 
-# Fonction appelée lorsqu'il touche quelque chose
-func on_collision():
-	# Inverse la direction
-	direction = -direction
+#===  Collition =====
+func _on_safe_zone_body_entered(body: Node):
+	print("Event")
+	# Si un autre ennemi ou un mur entre dans la zone de détection, l'ennemi fait demi-tour
+	if body.is_in_group("enemy") or body.is_in_group("wall"):
+		direction = -direction  # Inverse la direction pour faire demi-tour
+		print("Collision avec un ennemi ou un mur, demi-tour!")
+
+func _on_safe_zone_body_exited(body: Node):
+	# Si un autre ennemi ou un mur quitte la zone, tu peux réagir ici si nécessaire.
+	print("Collision quittée.")

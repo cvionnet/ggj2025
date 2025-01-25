@@ -42,3 +42,17 @@ texture = ExtResource("3_52myt")
 material = SubResource("ShaderMaterial_plk48")
 position = Vector2(629, 289)
 texture = ExtResource("5_u4ln1")
+
+[node name="Enemy2" parent="." instance=ExtResource("3_8vtd5")]
+position = Vector2(790, 258)
+enemy_type = 1
+
+[node name="Enemy3" parent="." instance=ExtResource("3_8vtd5")]
+position = Vector2(452, -91)
+
+[node name="Enemy4" parent="." instance=ExtResource("3_8vtd5")]
+position = Vector2(387, 143)
+enemy_type = 2
+
+[node name="Enemy5" parent="." instance=ExtResource("3_8vtd5")]
+position = Vector2(509, 222)
