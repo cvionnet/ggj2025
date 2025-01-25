@@ -124,7 +124,7 @@ func FartAction(IsFartActif) -> void:
 	$FartNoiseArea.set_detection_active(IsFartActif)
 	$"Bubble-back".FartActif(IsFartActif)
 	$"Bubble-front".FartActif(IsFartActif)
-	
+	$Shockwave.FartActif(IsFartActif)
 
 func StopFartAction() -> void:
 	emit_signal("stop_fart_drain")
