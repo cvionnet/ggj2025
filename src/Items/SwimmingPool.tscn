@@ -1,0 +1,60 @@
+[gd_scene load_steps=9 format=3 uid="uid://dpctq1r5db68f"]
+
+[ext_resource type="Texture2D" uid="uid://cevmyw5pvmccb" path="res://assets/scenes/background-swimming_pool.jpg" id="1_ammhb"]
+[ext_resource type="Shader" path="res://src/main/background-water.gdshader" id="2_acwxh"]
+[ext_resource type="Texture2D" uid="uid://c0df3bsu6q0h" path="res://assets/scenes/background-water.jpg" id="3_ulglk"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_plk48"]
+shader = ExtResource("2_acwxh")
+shader_parameter/ripple_center_1 = Vector2(0.21, 0.185)
+shader_parameter/ripple_center_2 = Vector2(0.835, 0.885)
+shader_parameter/ripple_center_3 = Vector2(0.49, 0.57)
+shader_parameter/ripple_speed = 3.256
+shader_parameter/ripple_frequency = 22.408
+shader_parameter/ripple_amplitude = 0.002
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0ho77"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_15j0m"]
+normal = Vector2(-1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_u6ljw"]
+normal = Vector2(0, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_fy4va"]
+
+[node name="Background" type="CanvasLayer"]
+layer = -1
+follow_viewport_enabled = true
+
+[node name="SwimmingPool" type="Sprite2D" parent="."]
+position = Vector2(740.5, 520.5)
+texture = ExtResource("1_ammhb")
+
+[node name="Water" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_plk48")
+position = Vector2(750.5, 551.5)
+texture = ExtResource("3_ulglk")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Left" type="CollisionShape2D" parent="StaticBody2D" groups=["world"]]
+position = Vector2(244, 424)
+shape = SubResource("WorldBoundaryShape2D_0ho77")
+debug_color = Color(0.839216, 0.196078, 0.407843, 1)
+
+[node name="Right" type="CollisionShape2D" parent="StaticBody2D" groups=["world"]]
+position = Vector2(1268, 436)
+shape = SubResource("WorldBoundaryShape2D_15j0m")
+debug_color = Color(0.837479, 0.195785, 0.407227, 1)
+
+[node name="Up" type="CollisionShape2D" parent="StaticBody2D" groups=["world"]]
+position = Vector2(754, -163)
+shape = SubResource("WorldBoundaryShape2D_u6ljw")
+debug_color = Color(0.839216, 0.196078, 0.407843, 1)
+
+[node name="Down" type="CollisionShape2D" parent="StaticBody2D" groups=["world"]]
+position = Vector2(748, 1279)
+shape = SubResource("WorldBoundaryShape2D_fy4va")
+debug_color = Color(0.839216, 0.196078, 0.407843, 1)
