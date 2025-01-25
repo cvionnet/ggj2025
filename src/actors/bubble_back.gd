@@ -7,10 +7,10 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 
-func FartActif(FartIsActif)->void:
-	$Bubbles1/GPUParticles2D.emitting= FartIsActif
-	$Bubbles2/GPUParticles2D.emitting= FartIsActif
+func FartActif(FartIsActif) -> void:
+	$Bubbles1/GPUParticles2D.emitting = FartIsActif
+	$Bubbles2/GPUParticles2D.emitting = FartIsActif

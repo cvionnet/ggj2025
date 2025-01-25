@@ -16,6 +16,7 @@ radius = 170.238
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("2")
 speed = 200.0
+speedRun = null
 inertia = 0.1
 
 [node name="Shockwave" parent="." instance=ExtResource("4_o63li")]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://d1s75rimmebrx"]
 
 [ext_resource type="Texture2D" uid="uid://cevmyw5pvmccb" path="res://assets/scenes/background-swimming_pool.jpg" id="1_ammhb"]
-[ext_resource type="Shader" path="res://src/main/background-water.gdshader" id="2_acwxh"]
+[ext_resource type="Shader" path="res://src/items/background-water.gdshader" id="2_acwxh"]
 [ext_resource type="Texture2D" uid="uid://b4iw1fm7sd41f" path="res://assets/scenes/background-water.png" id="3_kbawy"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_plk48"]
