@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://ch73qijvq756v" path="res://src/items/Bubbles.tscn" id="2_tl1nc"]
 [ext_resource type="Texture2D" uid="uid://cjv211rwugprg" path="res://assets/actors/player/player64.png" id="2_tpyct"]
 [ext_resource type="Script" path="res://src/actors/fart_noise_area.gd" id="3_6yy70"]
-[ext_resource type="PackedScene" uid="uid://c0v4e6ahtrm41" path="res://src/items/Shockwave.tscn" id="4_o63li"]
+[ext_resource type="PackedScene" uid="uid://dfuft12hs5g1" path="res://src/items/Shockwave.tscn" id="4_o63li"]
 [ext_resource type="Script" path="res://src/actors/camera_2d.gd" id="6_vhtyr"]
 
 [sub_resource type="RectangleShape2D" id="1"]
@@ -26,11 +26,11 @@ inertia = 0.1
 script = ExtResource("2_a6v1n")
 
 [node name="Bubbles2" parent="Bubble-back" instance=ExtResource("2_tl1nc")]
-position = Vector2(-50, -38)
+position = Vector2(-49, -53)
 scale = Vector2(0.25, 0.25)
 
 [node name="Bubbles1" parent="Bubble-back" instance=ExtResource("2_tl1nc")]
-position = Vector2(43, -40)
+position = Vector2(49, -48)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -7)
@@ -40,11 +40,11 @@ texture = ExtResource("2_tpyct")
 script = ExtResource("2_a6v1n")
 
 [node name="Bubbles2" parent="Bubble-front" instance=ExtResource("2_tl1nc")]
-position = Vector2(-44, 32)
+position = Vector2(-59, 58)
 scale = Vector2(0.25, 0.25)
 
 [node name="Bubbles1" parent="Bubble-front" instance=ExtResource("2_tl1nc")]
-position = Vector2(41, 25)
+position = Vector2(36, 51)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -4)

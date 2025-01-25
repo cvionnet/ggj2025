@@ -26,7 +26,6 @@ position = Vector2(439, 73)
 
 [node name="Player" parent="." instance=ExtResource("1")]
 position = Vector2(172, 148)
-speedRun = 20.0
 
 [node name="Background" parent="." instance=ExtResource("4_dnmh0")]
 
