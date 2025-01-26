@@ -56,6 +56,7 @@ func _ready() -> void:
 	var Fartbar = get_node('/root').find_child("FartUi", true, false)
 	Fartbar.connect("FartManaDisponible", Callable(self, "_on_FartManaDisponible"))
 	Fartbar.connect("FartMalus", Callable(self, "_on_FartMalus"))
+	$AnimationPlayer.play("swim")
 	FartAction(FartMalus)
 
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bu25ip1s17dnp"]
+[gd_scene load_steps=13 format=3 uid="uid://bu25ip1s17dnp"]
 
 [ext_resource type="Script" path="res://src/enemies/enemy.gd" id="1_4cbuq"]
 [ext_resource type="Texture2D" uid="uid://bnktf0l5sp3j5" path="res://assets/actors/enemies/granny.png" id="1_4sjww"]
@@ -13,6 +13,80 @@ radius = 34.0147
 resource_local_to_scene = true
 radius = 41.1947
 
+[sub_resource type="Animation" id="Animation_enqt2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -7)]
+}
+
+[sub_resource type="Animation" id="Animation_gka84"]
+resource_name = "swim"
+length = 1.25
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.633333, 1, 1.23333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -7), Vector2(5, -14), Vector2(0, -7), Vector2(-5, -14), Vector2(0, -7)]
+}
+
+[sub_resource type="Animation" id="Animation_jyt0f"]
+resource_name = "swim_enemies"
+length = 1.25
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.633333, 1, 1.23333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -7), Vector2(5, -14), Vector2(0, -7), Vector2(-5, -14), Vector2(0, -7)]
+}
+
+[sub_resource type="Animation" id="Animation_6atc7"]
+resource_name = "walk"
+length = 1.25
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.633333, 1, 1.23333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -7), Vector2(2, -25), Vector2(0, -7), Vector2(-2, -25), Vector2(0, -7)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mp8el"]
+_data = {
+"RESET": SubResource("Animation_enqt2"),
+"swim": SubResource("Animation_gka84"),
+"swim_enemies": SubResource("Animation_jyt0f"),
+"walk": SubResource("Animation_6atc7")
+}
+
 [node name="Enemy" type="CharacterBody2D" groups=["Enemy"]]
 script = ExtResource("1_4cbuq")
 enemy_type = 3
@@ -22,6 +96,7 @@ lifeguard_texture = ExtResource("4_bthop")
 boy_texture = ExtResource("5_3juv5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -7)
 texture = ExtResource("1_4sjww")
 
 [node name="CollisionShapePhysique" type="CollisionShape2D" parent="."]
@@ -33,6 +108,11 @@ collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SafeZone"]
 shape = SubResource("CircleShape2D_3o2sr")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_mp8el")
+}
 
 [connection signal="area_entered" from="SafeZone" to="." method="_on_safe_zone_area_entered"]
 [connection signal="body_entered" from="SafeZone" to="." method="_on_safe_zone_body_entered"]
