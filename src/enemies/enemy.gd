@@ -204,7 +204,15 @@ func _on_safe_zone_area_entered(area: Area2D) -> void:
 		direction = -direction  # Inverse la direction pour faire demi-tour
 	if area.is_in_group("Fart"):
 		$Alerte.visible = true
-
+		match enemy_type:
+			EnemyType.GRANNY:
+				get_node("/root/Node/Background/Granny").play()
+			EnemyType.MUSCLE:
+				get_node("/root/Node/Background/Muscle").play()
+			EnemyType.LIFEGUARD:
+				get_node("/root/Node/Background/Lifeguard").play()
+			EnemyType.BOY:
+				get_node("/root/Node/Background/Boy").play()
 
 func _on_safe_zone_area_exited(area: Area2D) -> void:
 	if area.is_in_group("Fart"):

@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://src/HUD/fart_ui.gd" id="1_fdnd1"]
 [ext_resource type="PackedScene" uid="uid://bx7pjhectaviu" path="res://src/HUD/Fartbar.tscn" id="2_0dh1c"]
 [ext_resource type="Texture2D" uid="uid://bhsee554tvykq" path="res://assets/UI/Fartbar/Bouteille.png" id="3_d0r1a"]
-[ext_resource type="PackedScene" uid="uid://50j0jqsxumqx" path="res://src/items/BubblesFartBar.tscn" id="3_ny5xw"]
+[ext_resource type="PackedScene" uid="uid://50j0jqsxumqx" path="res://src/Items/BubblesFartBar.tscn" id="3_ny5xw"]
 [ext_resource type="Texture2D" uid="uid://ccmbx867oassv" path="res://assets/UI/Fartbar/GasLeak1/0001.png" id="4_vdkto"]
 [ext_resource type="Texture2D" uid="uid://dovwmoe0txs4d" path="res://assets/UI/Fartbar/GasLeak1/0002.png" id="5_iblt7"]
 [ext_resource type="Texture2D" uid="uid://b1552osv14kod" path="res://assets/UI/Fartbar/GasLeak1/0003.png" id="6_y8bps"]
