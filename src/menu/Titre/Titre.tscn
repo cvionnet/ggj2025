@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://src/menu/Titre/titre.gd" id="1_wxqqf"]
 [ext_resource type="Script" path="res://src/menu/Titre/press_start.gd" id="3_qeno3"]
 [ext_resource type="AudioStream" uid="uid://2386vqgjrhqn" path="res://assets/music/Enter The Cassoulet.ogg" id="3_v0ksl"]
-[ext_resource type="PackedScene" path="res://src/menu/BubbleTransitionScreen.tscn" id="5_w0q2u"]
+[ext_resource type="PackedScene" uid="uid://ccvmhfr4aw1o7" path="res://src/menu/BubbleTransitionScreen.tscn" id="5_w0q2u"]
 
 [node name="Titre" type="Node2D"]
 script = ExtResource("1_wxqqf")
