@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://b0yamxgpgg8s2"]
+[gd_scene load_steps=8 format=3 uid="uid://b0yamxgpgg8s2"]
 
 [ext_resource type="Texture2D" uid="uid://cde7wmh8llog5" path="res://assets/scenes/Titre/Titre.png" id="1_cyla3"]
 [ext_resource type="Script" path="res://src/menu/Titre/titre.gd" id="1_wxqqf"]
 [ext_resource type="FontFile" uid="uid://bqgo0iduo5jeo" path="res://assets/UI/Font/ghostclan.ttf" id="3_bjh4m"]
 [ext_resource type="Script" path="res://src/menu/Titre/press_start.gd" id="3_qeno3"]
 [ext_resource type="AudioStream" uid="uid://2386vqgjrhqn" path="res://assets/music/Enter The Cassoulet.ogg" id="3_v0ksl"]
+[ext_resource type="PackedScene" uid="uid://ccvmhfr4aw1o7" path="res://src/menu/BubbleTransitionScreen.tscn" id="5_w0q2u"]
 [ext_resource type="PackedScene" uid="uid://bcyyelxi5owjn" path="res://src/menu/Transition/Transition.tscn" id="6_pi4tc"]
 
 [node name="Titre" type="Node2D"]
@@ -38,13 +39,8 @@ one_shot = true
 autostart = true
 
 [node name="Transition" parent="." instance=ExtResource("6_pi4tc")]
-full_text = "Gstaad municipal swimming pool, 1999.
-A man and his environment, as one.
-A shadow in the water, a passing scent most elusive in the wind.
-The Fart... must remain stealthy.
 
-Fart as much as you can while staying away from other people."
-typing_speed = 0.03
+[node name="BubbleTransitionScreen" parent="." instance=ExtResource("5_w0q2u")]
 
 [node name="ProutStart" type="AudioStreamPlayer" parent="."]
 
