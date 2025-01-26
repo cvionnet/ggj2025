@@ -1,6 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bx7pjhectaviu"]
-
-[ext_resource type="Script" path="res://src/HUD/fartbar.gd" id="1_jaljj"]
+[gd_scene load_steps=4 format=3 uid="uid://bx7pjhectaviu"]
 
 [sub_resource type="Theme" id="Theme_1jdbs"]
 
@@ -24,4 +22,3 @@ theme_override_styles/background = SubResource("StyleBoxFlat_stju0")
 theme_override_styles/fill = SubResource("StyleBoxFlat_l6l6v")
 value = 100.0
 show_percentage = false
-script = ExtResource("1_jaljj")

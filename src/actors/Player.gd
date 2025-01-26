@@ -53,7 +53,7 @@ func _process(_delta):
 	pass
 
 func _ready() -> void:
-	var Fartbar = get_node('/root').find_child("Fartbar", true, false)
+	var Fartbar = get_node('/root').find_child("FartUi", true, false)
 	Fartbar.connect("FartManaDisponible", Callable(self, "_on_FartManaDisponible"))
 	Fartbar.connect("FartMalus", Callable(self, "_on_FartMalus"))
 	FartAction(FartMalus)

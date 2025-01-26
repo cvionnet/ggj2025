@@ -24,7 +24,7 @@ position = Vector2(1157, 75)
 scale = Vector2(1.5, 1.5)
 
 [node name="FartUi" parent="HUD" instance=ExtResource("4_bauc5")]
-position = Vector2(-57, 237)
+position = Vector2(102, 300)
 
 [node name="Player" parent="." instance=ExtResource("1")]
 position = Vector2(172, 148)
