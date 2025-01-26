@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://src/menu/Titre/titre.gd" id="1_wxqqf"]
 [ext_resource type="Script" path="res://src/menu/Titre/press_start.gd" id="3_qeno3"]
 [ext_resource type="AudioStream" uid="uid://2386vqgjrhqn" path="res://assets/music/Enter The Cassoulet.ogg" id="3_v0ksl"]
-[ext_resource type="PackedScene" path="res://src/menu/BubbleTransitionScreen.tscn" id="5_w0q2u"]
+[ext_resource type="PackedScene" uid="uid://ccvmhfr4aw1o7" path="res://src/menu/BubbleTransitionScreen.tscn" id="5_w0q2u"]
 
 [node name="Titre" type="Node2D"]
 script = ExtResource("1_wxqqf")
@@ -17,11 +17,11 @@ scale = Vector2(0.831543, 0.831543)
 texture = ExtResource("1_cyla3")
 
 [node name="PressStart" type="Label" parent="General"]
-offset_left = 567.0
-offset_top = 464.0
+offset_left = 541.0
+offset_top = 467.0
 offset_right = 695.0
-offset_bottom = 487.0
-text = "Press Start"
+offset_bottom = 490.0
+text = "Press Start or Space"
 horizontal_alignment = 1
 script = ExtResource("3_qeno3")
 

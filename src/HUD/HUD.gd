@@ -19,7 +19,7 @@ func _ready():
 #*--    SIGNAL CALLBACKS    ------------------------------------------------*//
 
 func _on_Display_Key(key):
-	print(key)
+	pass
 
 
 
