@@ -44,34 +44,43 @@ position = Vector2(610.5, 322)
 [node name="Ambiance" type="AudioStreamPlayer" parent="Background"]
 stream = ExtResource("7_mq42k")
 autoplay = true
+playback_type = 2
 
 [node name="Granny" type="AudioStreamPlayer" parent="Background"]
 stream = ExtResource("8_desag")
+playback_type = 2
 
 [node name="Muscle" type="AudioStreamPlayer" parent="Background"]
 stream = ExtResource("9_3b7ye")
+playback_type = 2
 
 [node name="Boy" type="AudioStreamPlayer" parent="Background"]
 stream = ExtResource("10_svqci")
+playback_type = 2
 
 [node name="Lifeguard" type="AudioStreamPlayer" parent="Background"]
 stream = ExtResource("11_p47g0")
+playback_type = 2
 
 [node name="IngameMusic" type="AudioStreamPlayer" parent="Background"]
 stream = ExtResource("8_u0mdn")
 autoplay = true
+playback_type = 2
 
 [node name="GameOver" type="AudioStreamPlayer" parent="Background"]
 stream = ExtResource("8_kt01g")
+playback_type = 2
 
 [node name="Start" type="AudioStreamPlayer" parent="Background"]
 stream = ExtResource("10_io7x5")
 volume_db = -12.339
 autoplay = true
+playback_type = 2
 
 [node name="FullGauge" type="AudioStreamPlayer" parent="Background"]
 stream = ExtResource("15_al75n")
 volume_db = -9.695
+playback_type = 2
 
 [node name="Lifeguards" type="Node" parent="."]
 script = ExtResource("5_wxwii")
