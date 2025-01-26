@@ -36,8 +36,7 @@ func _process(delta: float) -> void:
 #*--    GODOT METHODS    ---------------------------------------------------*//
 
 func _on_sound_of_fart_is_detected():
-	SouspiciousScrore = SouspiciousScrore + ScroreSoundIsDetected 
-	print("Scrore : " + str(SouspiciousScrore))
+	SouspiciousScrore = SouspiciousScrore + ScroreSoundIsDetected
 	ValidationScore()
 	
 	# Met à jour la pression en montant progressivement et en oscillant
@@ -74,7 +73,5 @@ func alerte():
 
 
 func ValidationScore():
-	print("ValidationScore")
 	if(SouspiciousScrore>= max_value):
 		emit_signal("GameOver")
-		print("Game over")

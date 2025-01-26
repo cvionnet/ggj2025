@@ -58,7 +58,6 @@ func random_enemy_type() -> int:
 # Fonction pour générer un ennemi à une position aléatoire
 func spawn_enemy(type: int):
 	if not water_area:
-		print("Erreur : La zone 'Water' n'existe pas.")
 		return
 	
 	var enemy_instance = enemy_scene.instantiate() # Instancier la scène de l'ennemi
