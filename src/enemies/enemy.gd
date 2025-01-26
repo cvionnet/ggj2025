@@ -15,7 +15,7 @@ enum EnemyType {GRANNY, MUSCLE, LIFEGUARD, BOY}
 @onready var sprite = $Sprite2D
 @onready var area_detection = $SafeZone
 
-var player = null 
+var player = null
 
 var HorizontalDirection: float = 0 # 1 vers la droite, -1 vers la gauche
 var VerticalDirection: float = 0 # 1 vers le haut , -1 vers la bas
@@ -33,7 +33,7 @@ func _ready():
 # === Configuration de l'ennemi (texture et paramètres) ===
 
 func configure_enemy():
-	$Alerte.visible = false
+	$Exclamation.visible = false
 	$AnimationPlayer.play("swim_enemies")
 	
 	match enemy_type:
@@ -174,12 +174,20 @@ func _on_safe_zone_body_entered(body: Node):
 func _on_safe_zone_area_entered(area: Area2D) -> void:
 	# Si un autre ennemi ou un mur entre dans la zone de détection, l'ennemi fait demi-tour
 	if area.is_in_group("wall"):
-		direction = -direction  # Inverse la direction pour faire demi-tour
+		direction = -direction # Inverse la direction pour faire demi-tour
 	if area.is_in_group("Fart"):
-		$Alerte.visible = true
-
+		$Exclamation.visible = true
+		match enemy_type:
+			EnemyType.GRANNY:
+				get_node("/root/Node/Background/Granny").play()
+			EnemyType.MUSCLE:
+				get_node("/root/Node/Background/Muscle").play()
+			EnemyType.LIFEGUARD:
+				get_node("/root/Node/Background/Lifeguard").play()
+			EnemyType.BOY:
+				get_node("/root/Node/Background/Boy").play()
 
 func _on_safe_zone_area_exited(area: Area2D) -> void:
 	if area.is_in_group("Fart"):
-		$Alerte.visible = false
+		$Exclamation.visible = false
 	pass # Replace with function body.

@@ -122,10 +122,16 @@ func StartFartAction() -> void:
 	pass
 
 func FartAction(IsFartActif) -> void:
+	if(IsFartActif):
+		get_node('/root').find_child("FartSoundEffect", true, false).play()
+	else:
+		get_node('/root').find_child("FartSoundEffect", true, false).stop()
 	$FartNoiseArea.set_detection_active(IsFartActif)
 	$"Bubble-back".FartActif(IsFartActif)
 	$"Bubble-front".FartActif(IsFartActif)
 	$Shockwave.FartActif(IsFartActif)
+	if (IsFartActif && !$TearDrop/AnimationPlayer.is_playing()):
+		$TearDrop/AnimationPlayer.play("tear")
 
 func StopFartAction() -> void:
 	emit_signal("stop_fart_drain")

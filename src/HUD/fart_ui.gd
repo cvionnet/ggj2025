@@ -108,6 +108,7 @@ func trigger_malus():
 	#var explosion = explosion_scene.instantiate()
 	#explosion.global_position = global_position  # Place l'explosion sur la barre
 	#get_tree().current_scene.add_child(explosion)
+	get_node('/root').find_child("FullGauge", true, false).play()
 	is_fart_malus_active = true
 	emit_signal("FartMalus", is_fart_malus_active)
 	start_draining_fact();
