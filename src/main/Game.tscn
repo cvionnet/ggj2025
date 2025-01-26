@@ -33,6 +33,7 @@ position = Vector2(102, 300)
 
 [node name="Player" parent="." instance=ExtResource("1")]
 position = Vector2(610.5, 322)
+speedRun = 20.0
 
 [node name="Background" parent="." instance=ExtResource("4_dnmh0")]
 
@@ -60,7 +61,7 @@ position = Vector2(760, -277)
 rotation = -1.5708
 
 [node name="LifeguardDown" parent="Lifeguards" instance=ExtResource("5_1b2dm")]
-position = Vector2(765, 1366)
+position = Vector2(768, 1350)
 rotation = -1.5708
 
 [node name="Enemy5" parent="." instance=ExtResource("3_8vtd5")]

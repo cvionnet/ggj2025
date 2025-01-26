@@ -10,6 +10,7 @@ var is_fart_malus_active = false
 
 var valueAlerteScale = 0.0
 var valueAlerte = 0.0
+var Sens = 1.0
 
 @onready var Fartbar = $Fartbar
 @onready var DegazAnimated = $DegazAnimated
@@ -79,12 +80,17 @@ func stop_draining_fact():
 
 
 func alerte():
-	if(FartMana+10>= Fartbar.max_value):
+	if(FartMana+20>= Fartbar.max_value):
+		var Diff = float(FartMana +21 - Fartbar.max_value)*0.001
+	
 		if(valueAlerteScale >= 0.1):
-			valueAlerte =-0.01
+			Sens = -1.0
 		if(valueAlerteScale<= 0):
-			valueAlerte =0.01
+			Sens = 1.0
+		valueAlerte =Diff*Sens
+		print("valueAlerte:"+ str(valueAlerte) )
 		valueAlerteScale = valueAlerteScale + valueAlerte
+		print("valueAlerteScale:" + str(valueAlerteScale))
 		scale.x = scale.x +valueAlerte
 		scale.y = scale.x +valueAlerte
 	elif(valueAlerteScale>0):
