@@ -76,6 +76,3 @@ func trigger_malus():
 	is_fart_malus_active = true
 	emit_signal("FartMalus", is_fart_malus_active)
 	start_draining_fact();
-	# Déclenche le Game Over
-	print("Malus! Trop de pression !")
-	#get_tree().reload_current_scene()

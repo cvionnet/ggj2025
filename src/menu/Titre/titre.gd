@@ -18,6 +18,7 @@ func _input(event):
 
 
 func change_scene():
+	$General/PressStart.stop_blinking()
 	# Remplace par le chemin de ta scène cible
 	get_tree().change_scene_to_file(Game);
 
@@ -28,6 +29,7 @@ func _on_timer_timeout() -> void:
 
 
 func StartGame() -> void:
+	$General/PressStart.stop_blinking()
 	$BubbleTransitionScreen/GPUParticles2D.emitting = true
 	var GameTimer = Timer.new()
 	GameTimer.wait_time = 2.0

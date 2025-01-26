@@ -110,7 +110,6 @@ func _on_FartMalus(_FartMalus) -> void:
 func _on_fart_noise_area_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Enemy"):
 		emit_signal("sound_of_fart_is_detected")
-		print("Le sond du prout is dectected")
 	pass # Replace with function body.
 
 #*--------------------------------------------------------------------------*//
