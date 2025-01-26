@@ -6,10 +6,11 @@ var direction := 1  # Direction initiale : 1 = droite, -1 = gauche
 func _ready() -> void:
 	$Alerte.visible = false
 	pass # Replace with function body.
+	$AnimationPlayer.play("walk")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 
