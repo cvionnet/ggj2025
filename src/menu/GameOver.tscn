@@ -16,14 +16,14 @@ position = Vector2(606, 417)
 texture = ExtResource("2_geuiy")
 
 [node name="Score" type="Label" parent="General"]
-offset_left = 145.0
+offset_left = 193.0
 offset_top = 456.0
 offset_right = 1207.0
 offset_bottom = 704.0
 theme_override_colors/font_color = Color(0, 0.913725, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_v32in")
-theme_override_font_sizes/font_size = 28
+theme_override_font_sizes/font_size = 23
 text = "Alright, listen up, champ.
 You tryna be sneaky 
 but it's been 01:10 

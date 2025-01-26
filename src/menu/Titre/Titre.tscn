@@ -17,11 +17,11 @@ scale = Vector2(0.831543, 0.831543)
 texture = ExtResource("1_cyla3")
 
 [node name="PressStart" type="Label" parent="General"]
-offset_left = 567.0
-offset_top = 464.0
+offset_left = 541.0
+offset_top = 467.0
 offset_right = 695.0
-offset_bottom = 487.0
-text = "Press Start"
+offset_bottom = 490.0
+text = "Press Start or Space"
 horizontal_alignment = 1
 script = ExtResource("3_qeno3")
 
