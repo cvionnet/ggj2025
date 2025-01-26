@@ -13,7 +13,7 @@ config_version=5
 config/name="Sphincter Cell"
 run/main_scene="res://src/menu/Intro/Intro.tscn"
 config/features=PackedStringArray("4.3")
-config/icon="res://assets/UI/Icon.ico"
+config/icon="res://icon.png"
 
 [autoload]
 
