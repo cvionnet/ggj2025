@@ -91,6 +91,7 @@ _data = {
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("2")
 speed = 200.0
+speedRun = null
 inertia = 0.1
 
 [node name="Shockwave" parent="." instance=ExtResource("4_o63li")]
@@ -124,7 +125,7 @@ position = Vector2(0, -4)
 shape = SubResource("1")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.8, 0.8)
+zoom = Vector2(0.9, 0.9)
 limit_left = 10
 limit_top = -360
 limit_right = 1460
