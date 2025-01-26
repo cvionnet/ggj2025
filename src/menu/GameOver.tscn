@@ -37,5 +37,3 @@ stream = ExtResource("2_pi7il")
 autoplay = true
 
 [node name="BubbleTransitionScreen" parent="." instance=ExtResource("4_kxvjs")]
-scale = Vector2(0.25, 0.25)
-transform = Transform2D(0.25, 0, 0, 0.25, 0, 0)
