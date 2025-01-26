@@ -1,11 +1,12 @@
-[gd_scene load_steps=16 format=3 uid="uid://da2ak3xgrto8d"]
+[gd_scene load_steps=17 format=3 uid="uid://da2ak3xgrto8d"]
 
 [ext_resource type="Script" path="res://src/actors/Player.gd" id="2"]
 [ext_resource type="Script" path="res://src/actors/bubble_back.gd" id="2_a6v1n"]
-[ext_resource type="PackedScene" uid="uid://ch73qijvq756v" path="res://src/Items/Bubbles.tscn" id="2_tl1nc"]
+[ext_resource type="PackedScene" uid="uid://ch73qijvq756v" path="res://src/items/Bubbles.tscn" id="2_tl1nc"]
 [ext_resource type="Texture2D" uid="uid://cjv211rwugprg" path="res://assets/actors/player/player64.png" id="2_tpyct"]
 [ext_resource type="Script" path="res://src/actors/fart_noise_area.gd" id="3_6yy70"]
-[ext_resource type="PackedScene" uid="uid://dfuft12hs5g1" path="res://src/Items/Shockwave.tscn" id="4_o63li"]
+[ext_resource type="PackedScene" uid="uid://dfuft12hs5g1" path="res://src/items/Shockwave.tscn" id="4_o63li"]
+[ext_resource type="PackedScene" uid="uid://w6p7pfpwtax8" path="res://src/actors/TearDrop.tscn" id="6_mg0gg"]
 [ext_resource type="Script" path="res://src/actors/camera_2d.gd" id="6_vhtyr"]
 [ext_resource type="AudioStream" uid="uid://calql6wr2i3ou" path="res://assets/sounds/fart.ogg" id="8_f0a3n"]
 
@@ -119,6 +120,9 @@ scale = Vector2(0.25, 0.25)
 
 [node name="Bubbles1" parent="Bubble-front" instance=ExtResource("2_tl1nc")]
 position = Vector2(36, 51)
+
+[node name="TearDrop" parent="." instance=ExtResource("6_mg0gg")]
+position = Vector2(18, -25)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -4)
