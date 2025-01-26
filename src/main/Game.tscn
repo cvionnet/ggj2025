@@ -4,9 +4,9 @@
 [ext_resource type="Script" path="res://src/main/game.gd" id="1_s0f4h"]
 [ext_resource type="PackedScene" uid="uid://wtoxix0p5lnb" path="res://src/HUD/Suspiciousbar.tscn" id="2_8fxgb"]
 [ext_resource type="PackedScene" uid="uid://bu25ip1s17dnp" path="res://src/enemies/Enemy.tscn" id="3_8vtd5"]
-[ext_resource type="PackedScene" path="res://src/HUD/FartUI.tscn" id="4_bauc5"]
+[ext_resource type="PackedScene" uid="uid://buynia7wijeuv" path="res://src/HUD/FartUI.tscn" id="4_bauc5"]
 [ext_resource type="PackedScene" uid="uid://d1s75rimmebrx" path="res://src/items/SwimmingPool.tscn" id="4_dnmh0"]
-[ext_resource type="PackedScene" path="res://src/HUD/Stopwatch.tscn" id="4_rn3u5"]
+[ext_resource type="PackedScene" uid="uid://cj0xr0s43f3f3" path="res://src/HUD/Stopwatch.tscn" id="4_rn3u5"]
 [ext_resource type="PackedScene" uid="uid://bbqvmusrue80x" path="res://src/enemies/Lifeguard.tscn" id="5_1b2dm"]
 [ext_resource type="Script" path="res://src/main/lifeguards.gd" id="5_wxwii"]
 [ext_resource type="PackedScene" path="res://src/menu/BubbleTransitionScreen.tscn" id="9_xb3l5"]
@@ -29,7 +29,7 @@ position = Vector2(102, 300)
 
 [node name="Player" parent="." instance=ExtResource("1")]
 position = Vector2(610.5, 322)
-speedRun = null
+speedRun = 20.0
 
 [node name="Background" parent="." instance=ExtResource("4_dnmh0")]
 
