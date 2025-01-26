@@ -148,38 +148,12 @@ func move_boy(delta):
 
 	# Si le timer est écoulé, change de direction et réinitialise le timer
 	if change_direction_timer <= 0.0:
-		print("player.global_position : " + str(player.global_position))
-		print("Ennemi : ", self.name + "  global_position : " + str(global_position))
-		
 		var direction_to_player = (player.global_position - global_position)
-		
-		
-		print("direction_to_player : " + str(direction_to_player))
 		var random_direction = Vector2(randf() * 2 - 1, randf() * 2 - 1)
 		
 		direction = (direction_to_player * 0.8 + random_direction * 0.2).normalized() # Nouvelle direction aléatoire
 		change_direction_timer = randf_range(1.0, 5.0) # Timer pour le prochain changement (1 à 3 secondes)
-		# Empêche les NaN dans la position
 		
-		
-		#print ("player.global_position : " + str(player.global_position))
-		#print("Ennemi : ", self.name + "  global_position : " + str(global_position))
-		
-		# Direction vers le joueur
-		#var direction_to_player = (player.global_position - global_position).normalized()
-		
-		# Direction aléatoire
-		#var random_direction = Vector2(randf() * 2 - 1, randf() * 2 - 1).normalized()
-		
-		
-		# Pondération entre les deux directions
-		# 0.7 favorise le joueur, 0.3 conserve un peu d'aléatoire
-		#direction = Vector2(randf() * 2 - 1, randf() * 2 - 1).normalized() 
-		# (direction_to_player * 0.7 + random_direction * 0.3).normalized()
-		
-		# Réinitialise le timer pour le prochain changement (entre 1 et 3 secondes)
-		#change_direction_timer = randf_range(1.0, 3.0)
-
 	# Lerp entre l'ancienne direction et la nouvelle direction pour un mouvement plus smooth
 	velocity = direction.lerp(direction, 0.1) * get_speed() # Ajuste la valeur pour plus ou moins de smoothness
 	move_and_slide()
