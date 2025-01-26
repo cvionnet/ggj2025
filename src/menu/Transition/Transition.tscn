@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bcyyelxi5owjn"]
+
+[ext_resource type="Script" path="res://src/menu/Transition/transition.gd" id="1_t3qvy"]
+[ext_resource type="FontFile" uid="uid://bqgo0iduo5jeo" path="res://assets/UI/Font/ghostclan.ttf" id="2_2p15m"]
+
+[node name="Transition" type="Node2D"]
+script = ExtResource("1_t3qvy")
+
+[node name="TitleLabel" type="Label" parent="."]
+offset_right = 928.0
+offset_bottom = 350.0
+theme_override_fonts/font = ExtResource("2_2p15m")
+theme_override_font_sizes/font_size = 32
+text = "sffe"

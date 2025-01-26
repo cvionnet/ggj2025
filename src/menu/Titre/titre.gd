@@ -4,6 +4,7 @@ var Game = "res://src/main/Game.tscn"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$General.visible = false
 	pass # Replace with function body.
 
 
@@ -18,6 +19,7 @@ func _input(event):
 
 
 func change_scene():
+	$General/PressStart.stop_blinking()
 	# Remplace par le chemin de ta scène cible
 	get_tree().change_scene_to_file(Game);
 
@@ -28,10 +30,17 @@ func _on_timer_timeout() -> void:
 
 
 func StartGame() -> void:
+	$General/PressStart.stop_blinking()
 	$BubbleTransitionScreen/GPUParticles2D.emitting = true
 	var GameTimer = Timer.new()
-	GameTimer.wait_time = 4.0
+	GameTimer.wait_time = 2.0
 	GameTimer.one_shot = true
 	GameTimer.connect("timeout", Callable(self, "change_scene"))
 	add_child(GameTimer)
 	GameTimer.start()
+
+
+func _on_transition_end_text() -> void:
+	$Transition.visible = false
+	$General.visible = true
+	pass # Replace with function body.

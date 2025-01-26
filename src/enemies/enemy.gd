@@ -24,9 +24,7 @@ var change_direction_timer: float = 0.0 # Timer pour adoucir les changements de 
 
 func _ready():
 	player = get_node('/root').find_child("Player", true, false)
-	print(str(player.global_position))
 	add_to_group("enemy")
-	print("Ennemi prêt : ", self.name, "Type :", enemy_type)
 	configure_enemy()
 	direction = Vector2(HorizontalDirection, VerticalDirection)
 
@@ -56,7 +54,6 @@ func configure_enemy():
 			HorizontalDirection = 0.5
 			VerticalDirection = 0.5
 		_:
-			print("Type d'ennemi inconnu :", enemy_type)
 			HorizontalDirection = 0
 			VerticalDirection = 0
 
@@ -87,7 +84,7 @@ func get_speed() -> float:
 		EnemyType.LIFEGUARD:
 			return base_speed * 1 # Lifeguard a une vitesse moyenne
 		EnemyType.BOY:
-			return base_speed * 1.5 # Boy est très rapide
+			return base_speed * 1 # Boy est très rapide
 		_:
 			return base_speed # Vitesse par défaut
 

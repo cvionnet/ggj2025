@@ -58,7 +58,6 @@ func random_enemy_type() -> int:
 # Fonction pour générer un ennemi à une position aléatoire
 func spawn_enemy(type: int):
 	if not water_area:
-		print("Erreur : La zone 'Water' n'existe pas.")
 		return
 	
 	var enemy_instance = enemy_scene.instantiate() # Instancier la scène de l'ennemi
@@ -130,7 +129,7 @@ func StartEndGame() -> void:
 	get_node("/root/Node/Background/IngameMusic").stop()
 	get_node("/root/Node/Background/GameOver").play()
 	var endGameTimer = Timer.new()
-	endGameTimer.wait_time = 4.0
+	endGameTimer.wait_time = 2.0
 	endGameTimer.one_shot = true
 	endGameTimer.connect("timeout", Callable(self, "EndGame"))
 	add_child(endGameTimer)

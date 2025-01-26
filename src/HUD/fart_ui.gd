@@ -88,9 +88,7 @@ func alerte():
 		if(valueAlerteScale<= 0):
 			Sens = 1.0
 		valueAlerte =Diff*Sens
-		print("valueAlerte:"+ str(valueAlerte) )
 		valueAlerteScale = valueAlerteScale + valueAlerte
-		print("valueAlerteScale:" + str(valueAlerteScale))
 		scale.x = scale.x +valueAlerte
 		scale.y = scale.x +valueAlerte
 	elif(valueAlerteScale>0):
