@@ -176,12 +176,16 @@ func _on_safe_zone_area_entered(area: Area2D) -> void:
 		$Exclamation.visible = true
 		match enemy_type:
 			EnemyType.GRANNY:
+				get_node("/root/Node/Background/Granny").pitch_scale = randf_range(0.85, 1.15)
 				get_node("/root/Node/Background/Granny").play()
 			EnemyType.MUSCLE:
+				get_node("/root/Node/Background/Muscle").pitch_scale = randf_range(0.85, 1.15)
 				get_node("/root/Node/Background/Muscle").play()
 			EnemyType.LIFEGUARD:
+				get_node("/root/Node/Background/Lifeguard").pitch_scale = randf_range(0.85, 1.15)
 				get_node("/root/Node/Background/Lifeguard").play()
 			EnemyType.BOY:
+				get_node("/root/Node/Background/Boy").pitch_scale = randf_range(0.85, 1.15)
 				get_node("/root/Node/Background/Boy").play()
 
 func _on_safe_zone_area_exited(area: Area2D) -> void:

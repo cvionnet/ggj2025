@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bcyyelxi5owjn"]
+[gd_scene load_steps=3 format=3 uid="uid://bcyyelxi5owjn"]
 
 [ext_resource type="Script" path="res://src/menu/Transition/transition.gd" id="1_t3qvy"]
 [ext_resource type="FontFile" uid="uid://bqgo0iduo5jeo" path="res://assets/UI/Font/ghostclan.ttf" id="2_2p15m"]
-[ext_resource type="PackedScene" uid="uid://ccvmhfr4aw1o7" path="res://src/menu/BubbleTransitionScreen.tscn" id="3_qvl7a"]
 
 [node name="Transition" type="Node2D"]
 script = ExtResource("1_t3qvy")
@@ -13,7 +12,3 @@ offset_bottom = 350.0
 theme_override_fonts/font = ExtResource("2_2p15m")
 theme_override_font_sizes/font_size = 32
 text = "sffe"
-
-[node name="BubbleTransitionScreen" parent="." instance=ExtResource("3_qvl7a")]
-scale = Vector2(0.25, 0.25)
-transform = Transform2D(0.25, 0, 0, 0.25, 0, 0)

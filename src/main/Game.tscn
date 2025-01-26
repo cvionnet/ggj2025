@@ -4,9 +4,9 @@
 [ext_resource type="Script" path="res://src/main/game.gd" id="1_s0f4h"]
 [ext_resource type="PackedScene" uid="uid://wtoxix0p5lnb" path="res://src/HUD/Suspiciousbar.tscn" id="2_8fxgb"]
 [ext_resource type="PackedScene" uid="uid://bu25ip1s17dnp" path="res://src/enemies/Enemy.tscn" id="3_8vtd5"]
-[ext_resource type="PackedScene" path="res://src/HUD/FartUI.tscn" id="4_bauc5"]
-[ext_resource type="PackedScene" uid="uid://d1s75rimmebrx" path="res://src/items/SwimmingPool.tscn" id="4_dnmh0"]
-[ext_resource type="PackedScene" path="res://src/HUD/Stopwatch.tscn" id="4_rn3u5"]
+[ext_resource type="PackedScene" uid="uid://buynia7wijeuv" path="res://src/HUD/FartUI.tscn" id="4_bauc5"]
+[ext_resource type="PackedScene" uid="uid://d1s75rimmebrx" path="res://src/Items/SwimmingPool.tscn" id="4_dnmh0"]
+[ext_resource type="PackedScene" uid="uid://cj0xr0s43f3f3" path="res://src/HUD/Stopwatch.tscn" id="4_rn3u5"]
 [ext_resource type="PackedScene" uid="uid://bbqvmusrue80x" path="res://src/enemies/Lifeguard.tscn" id="5_1b2dm"]
 [ext_resource type="Script" path="res://src/main/lifeguards.gd" id="5_wxwii"]
 [ext_resource type="AudioStream" uid="uid://bro8cnbh08mpu" path="res://assets/sounds/ambiance.ogg" id="7_mq42k"]
@@ -44,43 +44,35 @@ position = Vector2(610.5, 322)
 [node name="Ambiance" type="AudioStreamPlayer" parent="Background"]
 stream = ExtResource("7_mq42k")
 autoplay = true
-playback_type = 2
 
 [node name="Granny" type="AudioStreamPlayer" parent="Background"]
 stream = ExtResource("8_desag")
-playback_type = 2
 
 [node name="Muscle" type="AudioStreamPlayer" parent="Background"]
 stream = ExtResource("9_3b7ye")
-playback_type = 2
 
 [node name="Boy" type="AudioStreamPlayer" parent="Background"]
 stream = ExtResource("10_svqci")
-playback_type = 2
 
 [node name="Lifeguard" type="AudioStreamPlayer" parent="Background"]
 stream = ExtResource("11_p47g0")
-playback_type = 2
 
 [node name="IngameMusic" type="AudioStreamPlayer" parent="Background"]
 stream = ExtResource("8_u0mdn")
 autoplay = true
-playback_type = 2
 
 [node name="GameOver" type="AudioStreamPlayer" parent="Background"]
 stream = ExtResource("8_kt01g")
-playback_type = 2
+volume_db = -4.407
 
 [node name="Start" type="AudioStreamPlayer" parent="Background"]
 stream = ExtResource("10_io7x5")
 volume_db = -12.339
 autoplay = true
-playback_type = 2
 
 [node name="FullGauge" type="AudioStreamPlayer" parent="Background"]
 stream = ExtResource("15_al75n")
 volume_db = -9.695
-playback_type = 2
 
 [node name="Lifeguards" type="Node" parent="."]
 script = ExtResource("5_wxwii")

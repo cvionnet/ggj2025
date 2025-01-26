@@ -122,6 +122,7 @@ func StartFartAction() -> void:
 
 func FartAction(IsFartActif) -> void:
 	if(IsFartActif):
+		get_node('/root').find_child("FartSoundEffect", true, false).pitch_scale = randf_range(0.85, 1.15)
 		get_node('/root').find_child("FartSoundEffect", true, false).play()
 	else:
 		get_node('/root').find_child("FartSoundEffect", true, false).stop()

@@ -8,7 +8,7 @@ A shadow in the water, a passing scent most elusive in the wind.
 The Fart... must remain stealthy.
 
 Fart as much as you can while staying away from other people."  # Texte complet à afficher
-@export var typing_speed: float = 0.03  # Vitesse d'affichage des lettres (en secondes)
+@export var typing_speed: float = 0.015  # Vitesse d'affichage des lettres (en secondes)
 
 signal EndText()
 
@@ -25,6 +25,6 @@ func show_text_letter_by_letter(text: String) -> void:
 		current_text += text[i]
 		$TitleLabel.text = current_text
 		await get_tree().create_timer(typing_speed).timeout  # Pause avant d'ajouter la lettre suivante
-	await get_tree().create_timer(1).timeout 
+	await get_tree().create_timer(2.5).timeout 
 	emit_signal("EndText")
 	

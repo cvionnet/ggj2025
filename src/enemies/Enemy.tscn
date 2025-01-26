@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bll1e4vohpst6" path="res://assets/actors/enemies/competitive_swimmer64.png" id="3_1lluu"]
 [ext_resource type="Texture2D" uid="uid://b3ngigatycinw" path="res://assets/actors/enemies/lifeguard96.png" id="4_bthop"]
 [ext_resource type="Texture2D" uid="uid://vl2ulwn30p0q" path="res://assets/actors/enemies/fat_guy96.png" id="5_3juv5"]
-[ext_resource type="PackedScene" uid="uid://bngenmf1kn1n1" path="res://src/actors/Exclamation.tscn" id="6_ovr8x"]
+[ext_resource type="PackedScene" path="res://src/actors/Exclamation.tscn" id="6_ovr8x"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_n23c3"]
 radius = 34.0147
