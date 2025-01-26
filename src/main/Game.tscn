@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" path="res://src/HUD/Stopwatch.tscn" id="4_rn3u5"]
 [ext_resource type="PackedScene" uid="uid://bbqvmusrue80x" path="res://src/enemies/Lifeguard.tscn" id="5_1b2dm"]
 [ext_resource type="Script" path="res://src/main/lifeguards.gd" id="5_wxwii"]
-[ext_resource type="PackedScene" path="res://src/menu/BubbleTransitionScreen.tscn" id="9_xb3l5"]
+[ext_resource type="PackedScene" uid="uid://ccvmhfr4aw1o7" path="res://src/menu/BubbleTransitionScreen.tscn" id="9_xb3l5"]
 
 [node name="Node" type="Node2D"]
 position = Vector2(147.5, 268)

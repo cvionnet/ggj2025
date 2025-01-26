@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bngenmf1kn1n1"]
+
+[ext_resource type="Texture2D" uid="uid://m2trgs7syfeo" path="res://assets/actors/exclamation.png" id="1_yy8wx"]
+
+[node name="Exclamation" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_yy8wx")
