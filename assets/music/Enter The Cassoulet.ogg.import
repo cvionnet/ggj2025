@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://2386vqgjrhqn"
+path="res://.godot/imported/Enter The Cassoulet.ogg-2f5d097e4c28f2714404ebb2e4b02f4d.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Enter The Cassoulet.ogg"
+dest_files=["res://.godot/imported/Enter The Cassoulet.ogg-2f5d097e4c28f2714404ebb2e4b02f4d.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
