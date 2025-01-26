@@ -126,7 +126,9 @@ func get_random_position_in_water_outside_camera_view(margin: float = 100.0) -> 
 
 func StartEndGame() -> void:
 	$BubbleTransitionScreen/GPUParticles2D.emitting = true
-
+	get_node("/root/Node/Background/Ambiance").stop()
+	get_node("/root/Node/Background/IngameMusic").stop()
+	get_node("/root/Node/Background/GameOver").play()
 	var endGameTimer = Timer.new()
 	endGameTimer.wait_time = 4.0
 	endGameTimer.one_shot = true
