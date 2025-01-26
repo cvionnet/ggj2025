@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://qifi5m6h2hm6"]
+[gd_scene load_steps=3 format=3 uid="uid://qifi5m6h2hm6"]
 
 [ext_resource type="Script" path="res://src/menu/game_over.gd" id="1_yol0l"]
+[ext_resource type="AudioStream" uid="uid://dkwhxxknd2kor" path="res://assets/music/Agent Farty-Seven.ogg" id="2_pi7il"]
 
 [node name="Titre" type="Node2D"]
 script = ExtResource("1_yol0l")
@@ -21,3 +22,7 @@ offset_right = 1070.0
 offset_bottom = 265.0
 text = "00:00"
 horizontal_alignment = 1
+
+[node name="GameOverMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_pi7il")
+autoplay = true

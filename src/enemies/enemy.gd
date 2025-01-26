@@ -15,12 +15,16 @@ enum EnemyType {GRANNY, MUSCLE, LIFEGUARD, BOY}
 @onready var sprite = $Sprite2D
 @onready var area_detection = $SafeZone
 
+var player = null 
+
 var HorizontalDirection: float = 0 # 1 vers la droite, -1 vers la gauche
 var VerticalDirection: float = 0 # 1 vers le haut , -1 vers la bas
 var direction: Vector2 = Vector2(HorizontalDirection, VerticalDirection) # Direction initiale
 var change_direction_timer: float = 0.0 # Timer pour adoucir les changements de direction
 
 func _ready():
+	player = get_node('/root').find_child("Player", true, false)
+	print(str(player.global_position))
 	add_to_group("enemy")
 	print("Ennemi prêt : ", self.name, "Type :", enemy_type)
 	configure_enemy()
@@ -79,11 +83,11 @@ func get_speed() -> float:
 		EnemyType.GRANNY:
 			return base_speed * 0.5 # Granny est lente
 		EnemyType.MUSCLE:
-			return base_speed * 1.5 # Muscle est rapide
+			return base_speed * 2.0 # Muscle est rapide
 		EnemyType.LIFEGUARD:
 			return base_speed * 1 # Lifeguard a une vitesse moyenne
 		EnemyType.BOY:
-			return base_speed * 2.0 # Boy est très rapide
+			return base_speed * 1.5 # Boy est très rapide
 		_:
 			return base_speed # Vitesse par défaut
 
@@ -123,7 +127,8 @@ func move_lifeguard(delta):
 	velocity = direction.normalized() * get_speed()
 	move_and_slide()
 
-func move_boy(delta):
+
+func move_boy_Old(delta):
 	# Boy : Changement de direction plus smooth
 	change_direction_timer -= delta # Décrémente le timer à chaque frame
 
@@ -135,6 +140,51 @@ func move_boy(delta):
 	# Lerp entre l'ancienne direction et la nouvelle direction pour un mouvement plus smooth
 	velocity = direction.lerp(direction, 0.1) * get_speed() # Ajuste la valeur pour plus ou moins de smoothness
 	move_and_slide()
+
+func move_boy(delta):
+	
+	# Boy : Changement de direction plus smooth
+	change_direction_timer -= delta # Décrémente le timer à chaque frame
+
+	# Si le timer est écoulé, change de direction et réinitialise le timer
+	if change_direction_timer <= 0.0:
+		print ("player.global_position : " + str(player.global_position))
+		print("Ennemi : ", self.name + "  global_position : " + str(global_position))
+		
+		var direction_to_player = (player.global_position - global_position)		
+		
+		
+		
+		print ("direction_to_player : " + str(direction_to_player))
+		var random_direction = Vector2(randf() * 2 - 1, randf() * 2 - 1)
+		
+		direction = (direction_to_player * 0.8 + random_direction * 0.2).normalized() # Nouvelle direction aléatoire
+		change_direction_timer = randf_range(1.0, 5.0) # Timer pour le prochain changement (1 à 3 secondes)
+		# Empêche les NaN dans la position
+		
+		
+		#print ("player.global_position : " + str(player.global_position))
+		#print("Ennemi : ", self.name + "  global_position : " + str(global_position))
+		
+		# Direction vers le joueur
+		#var direction_to_player = (player.global_position - global_position).normalized()
+		
+		# Direction aléatoire
+		#var random_direction = Vector2(randf() * 2 - 1, randf() * 2 - 1).normalized()
+		
+		
+		# Pondération entre les deux directions
+		# 0.7 favorise le joueur, 0.3 conserve un peu d'aléatoire
+		#direction = Vector2(randf() * 2 - 1, randf() * 2 - 1).normalized() 
+		# (direction_to_player * 0.7 + random_direction * 0.3).normalized()
+		
+		# Réinitialise le timer pour le prochain changement (entre 1 et 3 secondes)
+		#change_direction_timer = randf_range(1.0, 3.0)
+
+	# Lerp entre l'ancienne direction et la nouvelle direction pour un mouvement plus smooth
+	velocity = direction.lerp(direction, 0.1) * get_speed() # Ajuste la valeur pour plus ou moins de smoothness
+	move_and_slide()
+	
 
 func move_default(delta):
 	# Déplacement par défaut (si aucun type spécifique)

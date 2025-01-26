@@ -31,8 +31,6 @@ tangential_accel_max = 13.23
 scale_min = 0.2
 scale_max = 1.5
 scale_curve = SubResource("CurveTexture_ancer")
-hue_variation_min = -0.57
-hue_variation_max = -2.23517e-08
 hue_variation_curve = SubResource("CurveTexture_njvsg")
 turbulence_noise_strength = 5.65
 
