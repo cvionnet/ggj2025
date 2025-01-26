@@ -18,14 +18,14 @@ script = ExtResource("1_s0f4h")
 [node name="HUD" type="CanvasLayer" parent="."]
 
 [node name="Suspiciousbar" parent="HUD" instance=ExtResource("2_8fxgb")]
-position = Vector2(102, 117)
+position = Vector2(439, 101)
 
 [node name="Stopwatch" parent="HUD" instance=ExtResource("4_rn3u5")]
 position = Vector2(1157, 75)
 scale = Vector2(1.5, 1.5)
 
 [node name="FartUi" parent="HUD" instance=ExtResource("4_bauc5")]
-position = Vector2(-57, 237)
+position = Vector2(11, 27)
 
 [node name="Player" parent="." instance=ExtResource("1")]
 position = Vector2(172, 148)
