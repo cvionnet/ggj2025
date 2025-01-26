@@ -18,7 +18,7 @@ var current_pressure = 0.0  # Valeur courante de pression (pour montée progress
 @export var oscillation_amplitude := 0.00  # Amplitude de l'oscillation
 @export var oscillation_speed := 0.01  # Vitesse de l'oscillation
 #*--    SIGNAL -------*//
-
+signal GameOver()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -76,4 +76,5 @@ func alerte():
 func ValidationScore():
 	print("ValidationScore")
 	if(SouspiciousScrore>= max_value):
+		emit_signal("GameOver")
 		print("Game over")
