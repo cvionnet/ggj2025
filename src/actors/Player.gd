@@ -122,6 +122,10 @@ func StartFartAction() -> void:
 	pass
 
 func FartAction(IsFartActif) -> void:
+	if(IsFartActif):
+		get_node('/root').find_child("FartSoundEffect", true, false).play()
+	else:
+		get_node('/root').find_child("FartSoundEffect", true, false).stop()
 	$FartNoiseArea.set_detection_active(IsFartActif)
 	$"Bubble-back".FartActif(IsFartActif)
 	$"Bubble-front".FartActif(IsFartActif)

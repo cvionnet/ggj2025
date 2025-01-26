@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://da2ak3xgrto8d"]
+[gd_scene load_steps=17 format=3 uid="uid://da2ak3xgrto8d"]
 
 [ext_resource type="Script" path="res://src/actors/Player.gd" id="2"]
 [ext_resource type="Script" path="res://src/actors/bubble_back.gd" id="2_a6v1n"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dfuft12hs5g1" path="res://src/items/Shockwave.tscn" id="4_o63li"]
 [ext_resource type="PackedScene" uid="uid://w6p7pfpwtax8" path="res://src/actors/TearDrop.tscn" id="6_mg0gg"]
 [ext_resource type="Script" path="res://src/actors/camera_2d.gd" id="6_vhtyr"]
+[ext_resource type="AudioStream" uid="uid://calql6wr2i3ou" path="res://assets/sounds/fart.ogg" id="8_f0a3n"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(8, 8)
@@ -92,7 +93,6 @@ _data = {
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("2")
 speed = 200.0
-speedRun = null
 inertia = 0.1
 
 [node name="Shockwave" parent="." instance=ExtResource("4_o63li")]
@@ -154,5 +154,8 @@ shape = SubResource("CircleShape2D_x5r6r")
 libraries = {
 "": SubResource("AnimationLibrary_mp8el")
 }
+
+[node name="FartSoundEffect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_f0a3n")
 
 [connection signal="area_entered" from="FartNoiseArea" to="." method="_on_fart_noise_area_area_entered"]
