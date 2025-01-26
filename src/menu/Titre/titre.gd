@@ -32,7 +32,7 @@ func StartGame() -> void:
 	$General/PressStart.stop_blinking()
 	$BubbleTransitionScreen/GPUParticles2D.emitting = true
 	var GameTimer = Timer.new()
-	GameTimer.wait_time = 4.0
+	GameTimer.wait_time = 2.0
 	GameTimer.one_shot = true
 	GameTimer.connect("timeout", Callable(self, "change_scene"))
 	add_child(GameTimer)
