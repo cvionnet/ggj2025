@@ -4,6 +4,7 @@ var Game = "res://src/main/Game.tscn"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$General.visible = false
 	pass # Replace with function body.
 
 
@@ -37,3 +38,9 @@ func StartGame() -> void:
 	GameTimer.connect("timeout", Callable(self, "change_scene"))
 	add_child(GameTimer)
 	GameTimer.start()
+
+
+func _on_transition_end_text() -> void:
+	$Transition.visible = false
+	$General.visible = true
+	pass # Replace with function body.

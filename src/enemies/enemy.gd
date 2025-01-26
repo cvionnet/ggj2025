@@ -84,7 +84,7 @@ func get_speed() -> float:
 		EnemyType.LIFEGUARD:
 			return base_speed * 1 # Lifeguard a une vitesse moyenne
 		EnemyType.BOY:
-			return base_speed * 1.5 # Boy est très rapide
+			return base_speed * 1 # Boy est très rapide
 		_:
 			return base_speed # Vitesse par défaut
 
