@@ -68,15 +68,6 @@ func stop_draining_fact():
 		trigger_malus()
 
 
-func spawn_bubble_particles():
-	# Ajoute des particules de bulles pour animer la barre
-	#var particles = FartBubble_particle_scene.instantiate()
-	#particles.global_position = global_position + Vector2(randi() % rect_size.x, -10)
-	#get_tree().current_scene.add_child(particles)
-	
-	pass
-
-
 func trigger_malus():
 	# Crée un effet d'explosion
 	#var explosion = explosion_scene.instantiate()

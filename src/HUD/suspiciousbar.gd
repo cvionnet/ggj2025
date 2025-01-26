@@ -3,6 +3,8 @@ extends Node2D
 
 #*--    HEADER    ----------------------------------------------------------*//
 var SouspiciousScrore = 0.00  # Scrore de suspicious
+var valueAlerte = 0.0
+var valueAlerteScale = 0.0
 @export var min_angle := -135.0  # Angle minimum (gauche)
 @export var max_angle := 50.0   # Angle maximum (droite)
 @export var min_value := 0.00      # Valeur minimale (ex. 0 %)
@@ -48,6 +50,7 @@ func update_pressure(delta: float):
 	
 	# Calcule et applique l'angle
 	set_pressure(displayed_pressure)
+	alerte()
 
 # Fonction pour mettre à jour l'angle en fonction de la valeur
 func set_pressure(value: float):
@@ -59,7 +62,15 @@ func set_pressure(value: float):
 	var angle = lerp(min_angle, max_angle, t)  
 	$needle.rotation_degrees = angle  # Applique la rotation
 
-
+func alerte():
+	if(SouspiciousScrore+4>= max_value):
+		if(valueAlerteScale >= 0.1):
+			valueAlerte =-0.01
+		if(valueAlerteScale<= 0):
+			valueAlerte =0.01
+		valueAlerteScale = valueAlerteScale + valueAlerte
+		scale.x = scale.x +valueAlerte
+		scale.y = scale.x +valueAlerte
 
 
 func ValidationScore():
