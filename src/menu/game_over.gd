@@ -5,8 +5,7 @@ var Titre = "res://src/menu/Titre/Titre.tscn"
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$General/Score.text = "Alright, listen up, champ.
-You tryna be sneaky 
-but it's been " + Global.StrScoreMinuteSeconde +" 
+You tryna be sneaky but it's been " + Global.StrScoreMinuteSeconde +" 
 I caught you turning this pool into a jaccuzzi.
 Haul your nasty ass from here to the doctor's office!
 

@@ -6,7 +6,7 @@
 [ext_resource type="FontFile" uid="uid://bqgo0iduo5jeo" path="res://assets/UI/Font/ghostclan.ttf" id="3_v32in"]
 [ext_resource type="PackedScene" uid="uid://ccvmhfr4aw1o7" path="res://src/menu/BubbleTransitionScreen.tscn" id="4_kxvjs"]
 
-[node name="Titre2" type="Node2D"]
+[node name="Titre" type="Node2D"]
 script = ExtResource("1_yol0l")
 
 [node name="General" type="Node2D" parent="."]
