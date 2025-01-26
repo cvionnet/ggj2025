@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://bx7pjhectaviu"]
+[gd_scene load_steps=5 format=3 uid="uid://bx7pjhectaviu"]
 
 [ext_resource type="Script" path="res://src/HUD/fartbar.gd" id="1_jaljj"]
-[ext_resource type="PackedScene" uid="uid://50j0jqsxumqx" path="res://src/items/BubblesFartBar.tscn" id="2_n2mjy"]
 
 [sub_resource type="Theme" id="Theme_1jdbs"]
 
@@ -26,6 +25,3 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_l6l6v")
 value = 100.0
 show_percentage = false
 script = ExtResource("1_jaljj")
-
-[node name="BubblesFartBar" parent="." instance=ExtResource("2_n2mjy")]
-position = Vector2(81, 40)

@@ -1,25 +1,29 @@
-[gd_scene load_steps=4 format=3 uid="uid://buynia7wijeuv"]
+[gd_scene load_steps=5 format=3 uid="uid://buynia7wijeuv"]
 
 [ext_resource type="Texture2D" uid="uid://c7p10tjsagv77" path="res://assets/UI/Fartbar/Font_Bouteille.png" id="1_a8x2e"]
 [ext_resource type="PackedScene" uid="uid://bx7pjhectaviu" path="res://src/HUD/Fartbar.tscn" id="2_0dh1c"]
 [ext_resource type="Texture2D" uid="uid://bhsee554tvykq" path="res://assets/UI/Fartbar/Bouteille.png" id="3_d0r1a"]
+[ext_resource type="PackedScene" uid="uid://50j0jqsxumqx" path="res://src/items/BubblesFartBar.tscn" id="3_ny5xw"]
 
 [node name="FartUi" type="Node2D"]
 
 [node name="FontBouteille" type="Sprite2D" parent="."]
-position = Vector2(140.5, 45)
-rotation = 1.5708
+position = Vector2(160, 60)
 scale = Vector2(0.633333, 0.651982)
 texture = ExtResource("1_a8x2e")
 
 [node name="Fartbar" parent="." instance=ExtResource("2_0dh1c")]
-offset_left = 55.0
-offset_top = 5.0
-offset_right = 232.0
-offset_bottom = 82.0
+offset_left = 122.0
+offset_top = -10.0
+offset_right = 197.0
+offset_bottom = 135.0
+value = 50.0
+fill_mode = 3
+
+[node name="BubblesFartBar" parent="." instance=ExtResource("3_ny5xw")]
+position = Vector2(160, 88)
 
 [node name="Bouteille" type="Sprite2D" parent="."]
 position = Vector2(159, 43)
-rotation = 1.5708
 scale = Vector2(0.938198, 1.23779)
 texture = ExtResource("3_d0r1a")
