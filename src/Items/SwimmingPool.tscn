@@ -11,7 +11,7 @@ shader_parameter/ripple_center_2 = Vector2(0.565, 0.885)
 shader_parameter/ripple_center_3 = Vector2(0.555, 0.575)
 shader_parameter/ripple_speed = 2.128
 shader_parameter/ripple_frequency = 8.122
-shader_parameter/ripple_amplitude = 0.001
+shader_parameter/ripple_amplitude = 0.003
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0ho77"]
 normal = Vector2(1, 0)
