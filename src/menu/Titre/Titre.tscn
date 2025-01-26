@@ -1,10 +1,43 @@
-[gd_scene format=3 uid="uid://b0yamxgpgg8s2"]
+[gd_scene load_steps=6 format=3 uid="uid://b0yamxgpgg8s2"]
+
+[ext_resource type="Texture2D" uid="uid://cde7wmh8llog5" path="res://assets/scenes/Titre/Titre.png" id="1_cyla3"]
+[ext_resource type="Script" path="res://src/menu/Titre/titre.gd" id="1_wxqqf"]
+[ext_resource type="Script" path="res://src/menu/Titre/press_start.gd" id="3_qeno3"]
+[ext_resource type="AudioStream" uid="uid://2386vqgjrhqn" path="res://assets/music/Enter The Cassoulet.ogg" id="3_v0ksl"]
+[ext_resource type="PackedScene" path="res://src/menu/BubbleTransitionScreen.tscn" id="5_w0q2u"]
 
 [node name="Titre" type="Node2D"]
+script = ExtResource("1_wxqqf")
 
 [node name="General" type="Node2D" parent="."]
 
-[node name="SphincterCell" type="Label" parent="General"]
-offset_right = 40.0
-offset_bottom = 23.0
-text = "SPHINCTER CELL"
+[node name="Font" type="Sprite2D" parent="General"]
+position = Vector2(641, 297)
+scale = Vector2(0.831543, 0.831543)
+texture = ExtResource("1_cyla3")
+
+[node name="PressStart" type="Label" parent="General"]
+offset_left = 567.0
+offset_top = 464.0
+offset_right = 695.0
+offset_bottom = 487.0
+text = "Press Start"
+horizontal_alignment = 1
+script = ExtResource("3_qeno3")
+
+[node name="Sound" type="AudioStreamPlayer" parent="General"]
+stream = ExtResource("3_v0ksl")
+autoplay = true
+
+[node name="Timer" type="Timer" parent="General"]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[node name="BubbleTransitionScreen" parent="." instance=ExtResource("5_w0q2u")]
+scale = Vector2(0.25, 0.25)
+transform = Transform2D(0.25, 0, 0, 0.25, 0, 0)
+
+[node name="ProutStart" type="AudioStreamPlayer" parent="."]
+
+[connection signal="timeout" from="General/Timer" to="." method="_on_timer_timeout"]

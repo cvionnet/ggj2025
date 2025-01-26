@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://5p2m6p04165c"]
+
+[ext_resource type="Script" path="res://src/menu/Intro/intro.gd" id="1_ev6s2"]
+[ext_resource type="Texture2D" uid="uid://b2lim505iq25i" path="res://assets/scenes/background/BranquesInteractive.png" id="1_tk1dg"]
+[ext_resource type="Texture2D" uid="uid://ctuw4w12qunfv" path="res://assets/scenes/background/ArcEnCiel.png" id="2_kgw40"]
+[ext_resource type="Texture2D" uid="uid://c37uijxhhua23" path="res://assets/scenes/background/BranquesNoirEtBlanc.png" id="3_yoiw4"]
+[ext_resource type="Texture2D" uid="uid://duwahlaqs4o31" path="res://assets/scenes/background/White.png" id="5_blbjh"]
+[ext_resource type="AudioStream" uid="uid://ndc6sa1jqxfk" path="res://assets/music/BranquesInteractive.ogg" id="6_877ax"]
+
+[node name="Intro" type="Node2D"]
+script = ExtResource("1_ev6s2")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(195, 0)
+texture = ExtResource("5_blbjh")
+
+[node name="BackgroundCouleur" type="Sprite2D" parent="."]
+position = Vector2(220, 113)
+texture = ExtResource("1_tk1dg")
+offset = Vector2(479, 266)
+
+[node name="ArcEnCiel" type="Sprite2D" parent="."]
+position = Vector2(201, 224)
+texture = ExtResource("2_kgw40")
+offset = Vector2(480, -999.5)
+
+[node name="BackgroundNoirEtBlanc" type="Sprite2D" parent="."]
+position = Vector2(201, 109)
+texture = ExtResource("3_yoiw4")
+offset = Vector2(479, 266)
+
+[node name="SonIntro" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_877ax")
+autoplay = true
+
+[connection signal="finished" from="SonIntro" to="." method="_on_son_intro_finished"]
