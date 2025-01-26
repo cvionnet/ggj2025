@@ -126,6 +126,8 @@ func FartAction(IsFartActif) -> void:
 	$"Bubble-back".FartActif(IsFartActif)
 	$"Bubble-front".FartActif(IsFartActif)
 	$Shockwave.FartActif(IsFartActif)
+	if (IsFartActif && !$TearDrop/AnimationPlayer.is_playing()):
+		$TearDrop/AnimationPlayer.play("tear")
 
 func StopFartAction() -> void:
 	emit_signal("stop_fart_drain")
