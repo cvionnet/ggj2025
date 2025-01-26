@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://brdec2fx3fc7u"]
+
+[node name="Titre" type="Node2D"]
+
+[node name="General" type="Node2D" parent="."]
+
+[node name="SphincterCell" type="Label" parent="General"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "GAME OVER"

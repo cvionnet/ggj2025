@@ -16,7 +16,7 @@ signal FartMalus(IsActif)
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var player = get_node('/root').find_child("Player", true, false)
-	$Bubbles/GPUParticles2D
+	# $Bubbles/GPUParticles2D
 	player.connect("start_fart_drain", Callable(self, "_on_start_fart_drain"))
 	player.connect("stop_fart_drain", Callable(self, "_on_stop_fart_drain"))
 	stop_draining_fact();
@@ -24,7 +24,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 
