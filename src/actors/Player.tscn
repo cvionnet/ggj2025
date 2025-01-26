@@ -122,7 +122,6 @@ scale = Vector2(0.25, 0.25)
 position = Vector2(36, 51)
 
 [node name="TearDrop" parent="." instance=ExtResource("6_mg0gg")]
-visible = false
 position = Vector2(18, -25)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
