@@ -20,6 +20,9 @@ var timer: Timer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	#gestion du gameOver
+	var Suspiciousbar = get_node('/root').find_child("Suspiciousbar", true, false)
+	Suspiciousbar.connect("GameOver", Callable(self, "_GameOver_detected"))
 	# Créer un timer pour générer les ennemis
 	timer = Timer.new()
 	timer.wait_time = spawn_interval
@@ -29,9 +32,15 @@ func _ready() -> void:
 	timer.start() # Démarrer le timer
 
 func _process(_delta):
-	# To test ending screen
-	if Input.is_action_pressed('trigger_RB'):
-		StartEndGame()
+	pass
+
+
+#*--------------------------------------------------------------------------*//
+#*--    CALLBACK SIGNAL    ----------------------------------------------------*//
+func _GameOver_detected()->void:
+	StartEndGame()
+
+
 
 #*--------------------------------------------------------------------------*//
 #*--    USER METHODS    ----------------------------------------------------*//

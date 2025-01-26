@@ -4,6 +4,8 @@ var secondeTotal: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	var Suspiciousbar = get_node('/root').find_child("Suspiciousbar", true, false)
+	Suspiciousbar.connect("GameOver", Callable(self, "_GameOver_detected"))
 	pass # Replace with function body.
 
 
@@ -11,6 +13,10 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
+#=== calback Signal
+
+func _GameOver_detected()->void:
+	$Timer.stop()
 
 func _on_timer_timeout() -> void:
 	secondeTotal =secondeTotal+1
@@ -31,4 +37,6 @@ func _on_timer_timeout() -> void:
 		StrMSeconde = str(seconde)
 	
 	$TimerLabel.text = StrMinute + ":"+StrMSeconde
+	Global.ScoreSeconde= secondeTotal
+	Global.StrScoreMinuteSeconde = $TimerLabel.text
 	pass # Replace with function body.
