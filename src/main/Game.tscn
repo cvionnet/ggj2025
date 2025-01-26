@@ -63,6 +63,7 @@ autoplay = true
 
 [node name="GameOver" type="AudioStreamPlayer" parent="Background"]
 stream = ExtResource("8_kt01g")
+volume_db = -4.407
 
 [node name="Start" type="AudioStreamPlayer" parent="Background"]
 stream = ExtResource("10_io7x5")
