@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://mg47hmbqyedf"]
+[gd_scene load_steps=10 format=3 uid="uid://mg47hmbqyedf"]
 
 [ext_resource type="PackedScene" uid="uid://da2ak3xgrto8d" path="res://src/actors/Player.tscn" id="1"]
 [ext_resource type="Script" path="res://src/main/game.gd" id="1_s0f4h"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://d1s75rimmebrx" path="res://src/items/SwimmingPool.tscn" id="4_dnmh0"]
 [ext_resource type="PackedScene" uid="uid://bbqvmusrue80x" path="res://src/enemies/Lifeguard.tscn" id="5_1b2dm"]
 [ext_resource type="Script" path="res://src/main/lifeguards.gd" id="5_wxwii"]
+[ext_resource type="PackedScene" uid="uid://bqkby6yh7x3wy" path="res://src/menu/BubbleTransitionScreen.tscn" id="9_xb3l5"]
 
 [node name="Node" type="Node2D"]
 position = Vector2(147.5, 268)
@@ -42,3 +43,5 @@ rotation = -1.5708
 
 [node name="Enemy5" parent="." instance=ExtResource("3_8vtd5")]
 position = Vector2(509, 222)
+
+[node name="BubbleTransitionScreen" parent="." instance=ExtResource("9_xb3l5")]
