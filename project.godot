@@ -30,6 +30,7 @@ window/stretch/mode="viewport"
 [global_group]
 
 Enemy=""
+Fart="Fart"
 
 [importer_defaults]
 

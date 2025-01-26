@@ -137,7 +137,7 @@ editor_draw_limits = true
 editor_draw_drag_margin = true
 script = ExtResource("6_vhtyr")
 
-[node name="FartNoiseArea" type="Area2D" parent="."]
+[node name="FartNoiseArea" type="Area2D" parent="." groups=["Fart"]]
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("3_6yy70")

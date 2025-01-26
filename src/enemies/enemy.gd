@@ -29,8 +29,9 @@ func _ready():
 # === Configuration de l'ennemi (texture et paramètres) ===
 
 func configure_enemy():
+	$Alerte.visible = false
 	$AnimationPlayer.play("swim_enemies")
-
+	
 	match enemy_type:
 		EnemyType.GRANNY:
 			sprite.texture = granny_texture
@@ -150,4 +151,12 @@ func _on_safe_zone_body_entered(body: Node):
 func _on_safe_zone_area_entered(area: Area2D) -> void:
 	# Si un autre ennemi ou un mur entre dans la zone de détection, l'ennemi fait demi-tour
 	if area.is_in_group("wall"):
-		direction = -direction # Inverse la direction pour faire demi-tour
+		direction = -direction  # Inverse la direction pour faire demi-tour
+	if area.is_in_group("Fart"):
+		$Alerte.visible = true
+
+
+func _on_safe_zone_area_exited(area: Area2D) -> void:
+	if area.is_in_group("Fart"):
+		$Alerte.visible = false
+	pass # Replace with function body.
