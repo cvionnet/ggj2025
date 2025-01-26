@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://b0yamxgpgg8s2"]
+[gd_scene load_steps=8 format=3 uid="uid://b0yamxgpgg8s2"]
 
 [ext_resource type="Texture2D" uid="uid://cde7wmh8llog5" path="res://assets/scenes/Titre/Titre.png" id="1_cyla3"]
 [ext_resource type="Script" path="res://src/menu/Titre/titre.gd" id="1_wxqqf"]
+[ext_resource type="FontFile" uid="uid://bqgo0iduo5jeo" path="res://assets/UI/Font/ghostclan.ttf" id="3_bjh4m"]
 [ext_resource type="Script" path="res://src/menu/Titre/press_start.gd" id="3_qeno3"]
 [ext_resource type="AudioStream" uid="uid://2386vqgjrhqn" path="res://assets/music/Enter The Cassoulet.ogg" id="3_v0ksl"]
 [ext_resource type="PackedScene" uid="uid://ccvmhfr4aw1o7" path="res://src/menu/BubbleTransitionScreen.tscn" id="5_w0q2u"]
+[ext_resource type="PackedScene" uid="uid://bcyyelxi5owjn" path="res://src/menu/Transition/Transition.tscn" id="6_pi4tc"]
 
 [node name="Titre" type="Node2D"]
 script = ExtResource("1_wxqqf")
@@ -17,10 +19,12 @@ scale = Vector2(0.831543, 0.831543)
 texture = ExtResource("1_cyla3")
 
 [node name="PressStart" type="Label" parent="General"]
-offset_left = 541.0
-offset_top = 467.0
-offset_right = 695.0
-offset_bottom = 490.0
+offset_left = 495.0
+offset_top = 510.0
+offset_right = 737.0
+offset_bottom = 533.0
+theme_override_fonts/font = ExtResource("3_bjh4m")
+theme_override_font_sizes/font_size = 18
 text = "Press Start or Space"
 horizontal_alignment = 1
 script = ExtResource("3_qeno3")
@@ -34,10 +38,11 @@ wait_time = 2.0
 one_shot = true
 autostart = true
 
+[node name="Transition" parent="." instance=ExtResource("6_pi4tc")]
+
 [node name="BubbleTransitionScreen" parent="." instance=ExtResource("5_w0q2u")]
-scale = Vector2(0.25, 0.25)
-transform = Transform2D(0.25, 0, 0, 0.25, 0, 0)
 
 [node name="ProutStart" type="AudioStreamPlayer" parent="."]
 
 [connection signal="timeout" from="General/Timer" to="." method="_on_timer_timeout"]
+[connection signal="EndText" from="Transition" to="." method="_on_transition_end_text"]
